@@ -382,29 +382,32 @@ button[id$="-button"]{
 
 /* ---------- 돌아가기 버튼 ---------- */
 
-button[id*="back-stairs"]{margin-top:28px;}
+button[id*="back"]
+    {width:320px;
+    height:64px;
+    font-size:24px;}
 
-button[id*="back-basement"]{
+/* 복도로 돌아가기만 */
 
-    width:220px;          /* 일반 버튼보다 작게 */
+button[id$="-back-basement-button"],
+button[id$="-back-second-floor-button"]{
 
-    height:50px;
+    width:260px;
 
-    margin-top:450px;      /* 아래로 내리기 */
+    height:54px;
 
-    font-size:18px;       /* 글씨 작게 */
+    margin-top:45px;
 
-    opacity:.85;
+    font-size:20px;
 
-    color:#cfcfcf;
-
-    background:#1a1a1a;
-
-    border:1px solid rgba(255,255,255,.12);
+    opacity:.9;
 
 }
 
-button[id*="back"]:hover{
+}
+
+button[id$="-back-basement-button"],
+button[id$="-back-second-floor-button"]:hover{
 
     background:#252525;
 
