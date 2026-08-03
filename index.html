@@ -3,49 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>심야의 학교</title>
+    <title>학교 방탈출 게임</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main class="title-screen">
+    <!-- =========================
+         타이틀 화면
+    ========================== -->
+    <section id="titleScreen" class="screen">
 
-        <!-- 밤하늘 -->
-        <div class="sky">
-            <div class="moon"></div>
+        <h1>학교 방탈출</h1>
+
+        <p class="subtitle">
+            내일은 중요한 전공 시험.<br>
+            하지만 필요한 물건을 학교에 두고 왔다.
+        </p>
+
+        <div class="button-group">
+            <button id="newGameBtn">새 게임</button>
+            <button id="continueBtn">이어하기</button>
         </div>
 
-        <!-- 학교 실루엣 -->
-        <div class="school">
-            <div class="building main-building"></div>
-            <div class="building left-building"></div>
-            <div class="building right-building"></div>
-        </div>
+    </section>
 
-        <!-- 제목 -->
-        <section class="content">
 
-            <h1>
-                심야의 학교
-                <span>The Midnight School</span>
-            </h1>
+    <!-- =========================
+         교문 화면
+    ========================== -->
+    <section id="gateScreen" class="screen hidden">
 
-            <p class="story">
-                내일 전공 시험.<br>
-                하지만 가장 중요한 물건을 학교에 두고 왔다.
+        <h2>교문</h2>
+
+        <div class="story-box">
+            <p>
+                밤 11시.<br><br>
+
+                학교는 이미 불이 꺼져 있다.<br>
+                내일 시험에 필요한 <strong>토슈즈</strong>를
+                교실 사물함에 두고 온 것이 생각났다.<br><br>
+
+                다시 집으로 돌아갈 수는 없다.
             </p>
+        </div>
 
-            <div class="buttons">
-                <button id="startButton">START</button>
-                <button disabled>이어하기</button>
-            </div>
+        <button id="enterSchoolBtn">
+            학교 안으로 들어간다
+        </button>
 
-            <p id="message"></p>
+    </section>
 
-        </section>
 
-    </main>
+    <!-- =========================
+         정문 입구
+    ========================== -->
+    <section id="entranceScreen" class="screen hidden">
+
+        <h2>정문 입구</h2>
+
+        <p>
+            학교 안으로 들어왔다.<br>
+            사방이 조용하다.
+        </p>
+
+        <button id="stairsBtn">
+            계단으로 이동
+        </button>
+
+    </section>
+
 
     <script src="script.js"></script>
 
