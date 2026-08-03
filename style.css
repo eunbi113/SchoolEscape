@@ -230,7 +230,7 @@ button:hover{
 #ending{}
 
 /* ==========================================================
-   🏠 처음으로 버튼 위치 설정
+   🏠 버튼 위치 설정
 
    각 section의 첫 번째 버튼을
    오른쪽 위에 배치합니다.
@@ -243,17 +243,17 @@ section{
 }
 
 
-section button:first-of-type{
+section button:home-button{
 
     /* 오른쪽 위 위치 */
     position:absolute;
 
-    top:40px;
-    right:40px;
+    top:30px;
+    right:30px;
 
     /* 처음으로 버튼 크기 */
-    width:220px;
-    height:60px;
+    width:60px;
+    height:30px;
 
     /* 글자 크기 */
     font-size:24px;
