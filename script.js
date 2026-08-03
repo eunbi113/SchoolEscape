@@ -16,6 +16,8 @@ function hasItem(item){
 
 function saveGame(){
 
+    console.log("저장됨!");
+
     localStorage.setItem(
         "inventory",
         JSON.stringify(inventory)
