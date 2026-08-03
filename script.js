@@ -805,11 +805,16 @@ function auditoriumMemoryGame(){
 
     const number = "19600513";
 
-    alert(
-        "3초 동안 숫자를 기억하세요.\n\n" + number
-    );
+    const screen = document.getElementById("memory-screen");
+    const text = document.getElementById("memory-number");
+
+    text.textContent = number;
+
+    screen.style.display = "flex";
 
     setTimeout(()=>{
+
+        screen.style.display = "none";
 
         const answer = prompt(
             "방금 본 숫자를 입력하세요."
