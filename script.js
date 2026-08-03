@@ -1099,6 +1099,50 @@ miniGame(
     classroomPasswordGame
 );
 
+    #memory-input-area{
+
+    display:none;
+
+    text-align:center;
+
+}
+
+#memory-input-area p{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+#memory-answer{
+
+    width:250px;
+
+    height:45px;
+
+    font-size:28px;
+
+    text-align:center;
+
+}
+
+#memory-submit{
+
+    margin-top:20px;
+
+    width:120px;
+
+    height:45px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
 /* ----------------------------------------------------- */
 /* 엔딩 아이템 */
 /* ----------------------------------------------------- */
