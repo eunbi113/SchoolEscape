@@ -48,43 +48,47 @@ h1, h2, p {
 ========================================================= */
 section{
 
-    /* 카드 최대 너비 */
-    max-width:900px;
+    /* 화면 전체 너비 */
+    width:100%;
 
-    /* 화면 높이만큼 사용 */
-    min-height:100vh;
+    /* 화면 전체 높이 */
+    height:100vh;
 
-    /* Flex 사용 */
-    display:flex;
+    /* 여백 제거 */
+    margin:0;
 
-    /* 세로 방향으로 배치 */
-    flex-direction:column;
-
-    /* 위아래 가운데 정렬 */
-    justify-content:center;
-
-    /* 좌우 가운데 정렬 */
-    align-items:center;
-
-    /* 가운데 배치 */
-    margin:0 auto;
-
-    /* 카드 안쪽 여백 */
+    /* 안쪽 여백 */
     padding:35px;
 
     /* 카드 배경 */
     background:#705e77;
 
-    /* 둥근 모서리 */
-    border-radius:20px;
+    /* 모서리 없음 */
+    border-radius:0;
 
-    /* 카드 테두리 */
-    border:1px solid #cc321d;
+    /* 테두리 제거 */
+    border:none;
 
-    /* 그림자 */
-    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+    /* 그림자 제거 */
+    box-shadow:none;
 
+    /* 가운데 정렬 */
     text-align:center;
+
+    /* Flex 사용 */
+    display:flex;
+
+    /* 세로 방향 */
+    flex-direction:column;
+
+    /* 세로 가운데 */
+    justify-content:center;
+
+    /* 가로 가운데 */
+    align-items:center;
+
+    /* padding을 포함해서 크기 계산 */
+    box-sizing:border-box;
 }
 
 
