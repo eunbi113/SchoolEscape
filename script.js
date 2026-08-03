@@ -313,9 +313,6 @@ document.getElementById("move-computer-room-back-button");
 const moveComputerRoomTeacherButton =
 document.getElementById("move-computer-room-teacher-button");
 
-const backBasementFromComputerButton =
-document.getElementById("back-basement-from-computer-button");
-
 
 /* ---------- 교탁 ---------- */
 
