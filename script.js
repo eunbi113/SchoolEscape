@@ -155,8 +155,9 @@ connect(
     "practice-room-board"
 );
 
+
 connect(
-    "basement-hallway-back-basement-button",
+    "basement-hallway-back-stairs-button",
     "stairs"
 );
 
@@ -185,7 +186,7 @@ connect(
 );
 
 connect(
-    "first-floor-hallway-back-basement-button",
+    "first-floor-hallway-back-stairs-button",
     "stairs"
 );
 
