@@ -47,10 +47,11 @@ const screens = [
     stairs,
     basementHallway,
     smallAuditorium,
-    computerRoom,
+
     computerRoomDesk,
     computerRoomTeacher,
     computerRoomBack,
+    
     practiceRoom,
     firstFloorHallway,
     auditorium,
