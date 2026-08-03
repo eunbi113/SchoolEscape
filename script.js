@@ -1,6 +1,5 @@
 /* =====================================
    심야의 학교
-   최초 버전
 ===================================== */
 
 /*
@@ -9,10 +8,12 @@
     - titleScreen
     - gateScreen
     - entranceScreen
+    - stairsScreen
 
-    앞으로 새로운 화면을 만들 때는
-    HTML에 section을 추가하고
-    showScreen()에만 등록하면 된다.
+    새로운 화면을 만들 때는
+    HTML에 section을 추가한 뒤
+    아래 showScreen()에서 숨기는 목록에만
+    추가하면 된다.
 */
 
 // =========================
@@ -22,6 +23,7 @@
 const titleScreen = document.getElementById("titleScreen");
 const gateScreen = document.getElementById("gateScreen");
 const entranceScreen = document.getElementById("entranceScreen");
+const stairsScreen = document.getElementById("stairsScreen");
 
 // =========================
 // 버튼 요소
@@ -33,6 +35,10 @@ const continueBtn = document.getElementById("continueBtn");
 const enterSchoolBtn = document.getElementById("enterSchoolBtn");
 const stairsBtn = document.getElementById("stairsBtn");
 
+const basementBtn = document.getElementById("basementBtn");
+const floor1Btn = document.getElementById("floor1Btn");
+const floor2Btn = document.getElementById("floor2Btn");
+
 // =========================
 // 화면 전환
 // =========================
@@ -42,6 +48,7 @@ function showScreen(screen) {
     titleScreen.classList.add("hidden");
     gateScreen.classList.add("hidden");
     entranceScreen.classList.add("hidden");
+    stairsScreen.classList.add("hidden");
 
     screen.classList.remove("hidden");
 }
@@ -63,10 +70,8 @@ function updateContinueButton() {
 
 newGameBtn.addEventListener("click", function () {
 
-    // 기존 저장 데이터 삭제
     localStorage.removeItem("schoolEscapeSave");
 
-    // 교문 화면으로 이동
     showScreen(gateScreen);
 
 });
@@ -97,7 +102,30 @@ enterSchoolBtn.addEventListener("click", function () {
 
 stairsBtn.addEventListener("click", function () {
 
-    alert("계단은 다음 단계에서 구현됩니다.");
+    showScreen(stairsScreen);
+
+});
+
+// =========================
+// 계단 → 층 이동
+// (현재는 안내만 출력)
+// =========================
+
+basementBtn.addEventListener("click", function () {
+
+    alert("다음 단계에서 구현됩니다.");
+
+});
+
+floor1Btn.addEventListener("click", function () {
+
+    alert("다음 단계에서 구현됩니다.");
+
+});
+
+floor2Btn.addEventListener("click", function () {
+
+    alert("다음 단계에서 구현됩니다.");
 
 });
 
