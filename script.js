@@ -294,143 +294,177 @@ lockerButton.addEventListener("click", function(){
 
 });
 
+/* =========================================================
+   컴퓨터실 내부 이동 기능 추가
+   ---------------------------------------------------------
+   기존 JavaScript는 그대로 유지합니다.
 
-
-// ===============================
-// 🏠 버튼
-// ===============================
-
-const homeButtons = document.getElementsByClassName("home-button");
-
-
-for(let i = 0; i < homeButtons.length; i++){
-
-    homeButtons[i].addEventListener("click", function(){
-        showScreen(title);
-    });
-
-}
-
-/* ==========================================================
-   컴퓨터실 추가 화면 이동 기능
-   ----------------------------------------------------------
-   기존 script.js의 코드는 그대로 유지합니다.
-
-   추가된 화면
-   1. computer-room-desk    : 컴퓨터실 기본 화면
-   2. computer-room-teacher  : 교탁
-   3. computer-room-back     : 뒤편
+   추가되는 기능
+   1. computer-room-desk  → 기본 컴퓨터실
+   2. computer-room-teacher → 교탁
+   3. computer-room-back → 뒤편
 
    기존에 만든 showScreen() 함수를 그대로 사용합니다.
-========================================================== */
+========================================================= */
 
 
-/* ==========================================================
-   1. 새로운 section 가져오기
-========================================================== */
+/* =========================================================
+   1. 새로 추가된 화면 가져오기
+========================================================= */
 
 const computerRoomDesk = document.getElementById("computer-room-desk");
+
 const computerRoomTeacher = document.getElementById("computer-room-teacher");
+
 const computerRoomBack = document.getElementById("computer-room-back");
 
 
-/* ==========================================================
-   2. 기존 화면 배열에 추가
+/* =========================================================
+   2. 컴퓨터실 화면의 버튼 가져오기
 
-   주의:
-   기존 screens 배열이 이미 있다면
-   아래 코드를 배열 마지막 부분에 추가합니다.
-
-   그래야 showScreen() 함수가
-   새로운 화면도 숨기고 보여줄 수 있습니다.
-========================================================== */
-
-screens.push(
-    computerRoomDesk,
-    computerRoomTeacher,
-    computerRoomBack
-);
+   HTML에서 작성한 id를 이용하기 때문에
+   버튼 위치가 바뀌어도 안전하게 사용할 수 있습니다.
+========================================================= */
 
 
+/* ---------- 기본 컴퓨터실 ---------- */
 
-/* ==========================================================
-   3. 컴퓨터실 버튼 가져오기
-========================================================== */
+const goTeacherButton =
+    document.getElementById("go-teacher-button");
 
 
-/* ---------- 컴퓨터실 기본 화면 ---------- */
+const goBackRoomButton =
+    document.getElementById("go-back-room-button");
 
-// 교탁으로 이동하는 버튼
-const moveTeacherButton =
-    computerRoomDesk.getElementsByClassName("move-teacher-button")[0];
 
-// 뒤편으로 이동하는 버튼
-const moveBackButton =
-    computerRoomDesk.getElementsByClassName("move-back-button")[0];
-
-// 복도로 돌아가기 버튼
 const backComputerHallwayButton =
-    computerRoomDesk.getElementsByClassName("back-computer-hallway-button")[0];
+    document.getElementById("back-computer-hallway-button");
 
 
 
-/* ---------- 교탁 화면 ---------- */
+/* ---------- 교탁 ---------- */
 
-// 기본 화면으로 이동
-const teacherLeftButton =
-    computerRoomTeacher.getElementsByClassName("left-button")[0];
-
-// 뒤편으로 이동
-const teacherRightButton =
-    computerRoomTeacher.getElementsByClassName("right-button")[0];
-
-// 복도로 돌아가기
-const teacherHallwayButton =
-    computerRoomTeacher.getElementsByClassName("back-computer-hallway-button")[0];
+const goDeskButton =
+    document.getElementById("go-desk-button");
 
 
+const teacherToBackButton =
+    document.getElementById("teacher-to-back-button");
 
-/* ---------- 뒤편 화면 ---------- */
 
-// 기본 화면으로 이동
-const backLeftButton =
-    computerRoomBack.getElementsByClassName("left-button")[0];
-
-// 교탁으로 이동
-const backRightButton =
-    computerRoomBack.getElementsByClassName("right-button")[0];
-
-// 복도로 돌아가기
-const backHallwayButton =
-    computerRoomBack.getElementsByClassName("back-computer-hallway-button")[0];
+const backToComputerRoomButton =
+    document.getElementById("back-to-computer-room-button");
 
 
 
-/* ==========================================================
-   4. 화면 이동 기능 연결
-========================================================== */
+/* ---------- 뒤편 ---------- */
+
+const backToTeacherButton =
+    document.getElementById("back-to-teacher-button");
 
 
-/* ---------- 컴퓨터실 기본 화면 ---------- */
+const backRoomToDeskButton =
+    document.getElementById("back-room-to-desk-button");
 
 
-// 기본 화면 → 교탁
-moveTeacherButton.addEventListener("click", function(){
+const backRoomExitButton =
+    document.getElementById("back-room-exit-button");
+
+
+
+/* =========================================================
+   3. 컴퓨터실 기본 화면 이동
+
+   기본 컴퓨터실
+        ↓
+      교탁
+========================================================= */
+
+goTeacherButton.addEventListener("click", function(){
 
     showScreen(computerRoomTeacher);
 
 });
 
 
-// 기본 화면 → 뒤편
-moveBackButton.addEventListener("click", function(){
+
+/* =========================================================
+   4. 기본 컴퓨터실 → 뒤편 이동
+
+========================================================= */
+
+goBackRoomButton.addEventListener("click", function(){
 
     showScreen(computerRoomBack);
 
 });
 
 
-// 기본 화면 → 지하 복도
+
+/* =========================================================
+   5. 교탁 화면 이동
+
+   교탁
+      ↓
+   기본 컴퓨터실
+========================================================= */
+
+goDeskButton.addEventListener("click", function(){
+
+    showScreen(computerRoomDesk);
+
+});
+
+
+
+/* =========================================================
+   6. 교탁 → 뒤편 이동
+
+========================================================= */
+
+teacherToBackButton.addEventListener("click", function(){
+
+    showScreen(computerRoomBack);
+
+});
+
+
+
+/* =========================================================
+   7. 뒤편 → 교탁 이동
+
+========================================================= */
+
+backToTeacherButton.addEventListener("click", function(){
+
+    showScreen(computerRoomTeacher);
+
+});
+
+
+
+/* =========================================================
+   8. 뒤편 → 기본 컴퓨터실 이동
+
+========================================================= */
+
+backRoomToDeskButton.addEventListener("click", function(){
+
+    showScreen(computerRoomDesk);
+
+});
+
+
+
+/* =========================================================
+   9. 복도로 돌아가기
+
+   세 화면 모두 같은 지하 복도로 이동합니다.
+========================================================= */
+
+
+/* 기본 컴퓨터실 → 지하 복도 */
+
 backComputerHallwayButton.addEventListener("click", function(){
 
     showScreen(basementHallway);
@@ -439,27 +473,9 @@ backComputerHallwayButton.addEventListener("click", function(){
 
 
 
-/* ---------- 교탁 화면 ---------- */
+/* 교탁 → 지하 복도 */
 
-
-// 교탁 → 기본 화면
-teacherLeftButton.addEventListener("click", function(){
-
-    showScreen(computerRoomDesk);
-
-});
-
-
-// 교탁 → 뒤편
-teacherRightButton.addEventListener("click", function(){
-
-    showScreen(computerRoomBack);
-
-});
-
-
-// 교탁 → 지하 복도
-teacherHallwayButton.addEventListener("click", function(){
+backToComputerRoomButton.addEventListener("click", function(){
 
     showScreen(basementHallway);
 
@@ -467,27 +483,9 @@ teacherHallwayButton.addEventListener("click", function(){
 
 
 
-/* ---------- 뒤편 화면 ---------- */
+/* 뒤편 → 지하 복도 */
 
-
-// 뒤편 → 기본 화면
-backLeftButton.addEventListener("click", function(){
-
-    showScreen(computerRoomDesk);
-
-});
-
-
-// 뒤편 → 교탁
-backRightButton.addEventListener("click", function(){
-
-    showScreen(computerRoomTeacher);
-
-});
-
-
-// 뒤편 → 지하 복도
-backHallwayButton.addEventListener("click", function(){
+backRoomExitButton.addEventListener("click", function(){
 
     showScreen(basementHallway);
 
