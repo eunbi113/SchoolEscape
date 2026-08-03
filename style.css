@@ -26,7 +26,7 @@ body{
     padding:20px;
 
     /* 글꼴 */
-    font-family:"HY 견고딕", sans-serif;
+    font-family:"Arial", sans-serif;
 
     /* 밤 분위기의 배경 */
     background:#0d74e3;
@@ -37,7 +37,9 @@ body{
     /* 가운데 정렬 */
     text-align:center;
 }
-
+h1, h2, p {
+    color: white;
+}
 
 /* =========================================================
    모든 화면(section)
