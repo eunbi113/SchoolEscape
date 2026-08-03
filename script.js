@@ -809,19 +809,9 @@ function restroomPuzzleGame(){
 function practiceRoomHint(){
 
     getItem(
-        "칠판에 글씨가 적혀 있다.\n\n" +
         "hint1",
+        "칠판에 글씨가 적혀 있다.\n\n" +
         "첫 번째 숫자는 무용과의 반 번호이다."
-    );
-
-}
-
-function outdoorStageHint(){
-
-    getItem(
-        "무대 바닥에 메모가 떨어져 있다.\n\n" +
-        "hint3",
-        "세 번째와 네 번째 숫자는 우리 학교의 전공 개수이다."
     );
 
 }
@@ -829,9 +819,19 @@ function outdoorStageHint(){
 function auditoriumHint(){
 
     getItem(
-        "무대 바닥에 메모가 떨어져 있다.\n\n" +
         "hint2",
+        "무대 바닥에 메모가 떨어져 있다.\n\n" +
         "두 번째 숫자는 음연과의 반 번호이다."
+    );
+
+}
+
+function outdoorStageHint(){
+
+    getItem(
+        "hint3",
+        "무대 바닥에 메모가 떨어져 있다.\n\n" +
+        "세 번째와 네 번째 숫자는 우리 학교의 전공 개수이다."
     );
 
 }
