@@ -19,19 +19,19 @@ const mainEntrance = document.getElementById("main-entrance");
 const stairs = document.getElementById("stairs");
 
 const basementHallway = document.getElementById("basement-hallway");
-const smallAuditorium = document.getElementById("small-auditorium");
+const smallAuditorium = document.getElementById("small-auditorium-stage");
 const computerRoomDesk = document.getElementById("computer-room-desk");
 const computerRoomTeacher = document.getElementById("computer-room-teacher");
 const computerRoomBack = document.getElementById("computer-room-back");
-const practiceRoom = document.getElementById("practice-room");
+const practiceRoom = document.getElementById("practice-room-board");
 
 const firstFloorHallway = document.getElementById("first-floor-hallway");
-const auditorium = document.getElementById("auditorium");
-const restroom = document.getElementById("restroom");
-const outdoorStage = document.getElementById("outdoor-stage");
+const auditorium = document.getElementById("auditorium-seat");
+const restroom = document.getElementById("restroom-sink");
+const outdoorStage = document.getElementById("outdoor-stage-seat");
 
 const secondFloorHallway = document.getElementById("second-floor-hallway");
-const classroom = document.getElementById("classroom");
+const classroom = document.getElementById("classroom-board");
 
 const ending = document.getElementById("ending");
 
