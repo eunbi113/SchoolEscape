@@ -10,6 +10,19 @@ function hasItem(item){
 
 }
 
+/* ------------------------------- */
+/* 저장 */
+/* ------------------------------- */
+
+function saveGame(){
+
+    localStorage.setItem(
+        "inventory",
+        JSON.stringify(inventory)
+    );
+
+}
+
 /* ----------------------------------------------------- */
 /* 화면 */
 /* ----------------------------------------------------- */
@@ -644,6 +657,8 @@ function getItem(itemName,message){
 inventory.push(itemName);
 
 updateInventory();
+
+saveGame();
 
 alert(message);
 
