@@ -24,10 +24,11 @@ body{
 
     background:
         radial-gradient(circle at top,
-            #2a2a2a 0%,
-            #171717 35%,
-            #090909 100%);
-    color:#fff;
+            #242424 0%,
+            #161616 40%,
+            #080808 100%);
+
+    color:#f4f4f4;
 
     font-family:
         "Pretendard",
@@ -35,6 +36,9 @@ body{
         sans-serif;
 
     overflow:hidden;
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 
 }
 
@@ -50,20 +54,24 @@ section{
     width:100%;
     height:100vh;
 
-    padding-top:110px;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding-top:140px;
 
     text-align:center;
 
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-
-    animation:fade .4s ease;
+    animation:fade .35s ease;
 
 }
 
 
-/* 시작 화면 */
+/* 첫 화면 */
 
 #title{
 
@@ -72,14 +80,14 @@ section{
 }
 
 
-/* ---------- 애니메이션 ---------- */
+/* ---------- 등장 ---------- */
 
 @keyframes fade{
 
     from{
 
         opacity:0;
-        transform:translateY(10px);
+        transform:translateY(15px);
 
     }
 
@@ -97,13 +105,19 @@ section{
 
 h1{
 
-    font-size:88px;
+    font-size:86px;
 
-    margin-bottom:35px;
+    font-weight:800;
 
-    letter-spacing:4px;
+    letter-spacing:3px;
 
-    text-shadow:0 0 10px rgba(255,255,255,.3),
+    margin-bottom:55px;
+
+    color:#fafafa;
+
+    text-shadow:
+
+        0 0 10px rgba(255,255,255,.35),
 
         0 0 30px rgba(255,255,255,.08);
 
@@ -112,160 +126,164 @@ h1{
 
 h2{
 
-    font-size:54px;
+    font-size:58px;
 
-    margin-bottom:28px;
+    font-weight:700;
 
-    after{
-        content:"";
-        display:black;
-        width:220px;
-        height:1px;
-        background:#7d6d56;
-        margin:15px auto 0;
+    margin-bottom:35px;
+
+    letter-spacing:2px;
+
+    color:#f7f7f7;
+
+    text-shadow:
+
+        0 0 8px rgba(255,255,255,.18);
 
 }
 
 
-/* ---------- 설명 ---------- */
+/* ---------- 설명창 ---------- */
 
 p{
 
-    width:850px;
+    width:min(800px,90%);
 
-    min-height:220px;
+    min-height:190px;
 
-    padding:40px;
+    padding:35px 45px;
 
-    border:2px solid rgba(255,255,255,.25);
+    margin-bottom:70px;
 
-    border-radius:20px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    line-height:1.9;
+
+    font-size:28px;
+
+    color:#dddddd;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:18px;
 
     background:
 
         rgba(255,255,255,.03);
 
-    line-height:1.9;
-
     box-shadow:
 
-        inset 0 0 10px rgba(255,255,255,.05),
+        inset 0 0 15px rgba(255,255,255,.03),
 
-        0 0 15px rgba(0,0,0,.4);
+        0 0 18px rgba(0,0,0,.35);
 
 }
 
+/* ===================================================== */
+/* 심야의 학교 */
+/* ===================================================== */
 
-/* ---------- 버튼 공통 ---------- */
+
+/* ---------- 일반 버튼 ---------- */
 
 button{
 
     cursor:pointer;
 
-    margin-top:20px;
+    width:320px;
+    height:64px;
 
-    padding:15px 28px;
+    margin:12px 0;
 
     font-size:24px;
+    font-weight:600;
 
-    color:white;
-
-    width:320px;
-
-    height:70px;
-
-    border-radius:12px;
-
-    border:2px solid rgba(255,255,255,.18);
+    color:#f2f2f2;
 
     background:
-
         linear-gradient(
+            to bottom,
+            #323232,
+            #1f1f1f
+        );
 
-            #2b2b2b,
+    border:1px solid rgba(255,255,255,.18);
 
-            #1d1d1d);
+    border-radius:12px;
 
     font-family:inherit;
 
     transition:
-        background .2s,
-        transform 1.03s,
-        box-shadow .2s;
+        background .25s,
+        border-color .25s,
+        transform .18s,
+        box-shadow .25s;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
 
 }
 
+
+/* ---------- Hover ---------- */
 
 button:hover{
 
-    border-color:#d6c39d;
-
     background:
-
         linear-gradient(
+            to bottom,
+            #424242,
+            #2a2a2a
+        );
 
-            #343434,
+    border-color:#d9c49a;
 
-            #232323);
+    box-shadow:
+        0 12px 26px rgba(0,0,0,.45);
 
     transform:translateY(-2px);
 
-    box-shadow:
-        0 8px 18px rgba(0,0,0,.35);
-
 }
 
+
+/* ---------- Click ---------- */
 
 button:active{
 
-    transform:scale(.97);
+    transform:translateY(1px);
 
 }
 
 
-/* ---------- 시작 버튼 ---------- */
-
-#start-button{
-
-    font-size:24px;
-
-    font-weight:bold;
-
-}
-
-
-#continue-button{
-
-    margin-top:10px;
-
-}
-
-
-/* ---------- 홈 버튼 ---------- */
+/* ---------- Home ---------- */
 
 .home-button{
 
     position:absolute;
 
-    top:20px;
-    right:20px;
+    top:28px;
+    right:28px;
 
-    width:50px;
-    height:50px;
+    width:52px;
+    height:52px;
 
-    min-width:50px;
-
-    padding:0;
+    margin:0;
 
     border-radius:50%;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background:#222;
+
+    border:1px solid rgba(255,255,255,.20);
 
     font-size:22px;
 
-    background:#2f2f2f;
+    z-index:100;
 
 }
 
@@ -286,65 +304,67 @@ button:active{
 
     top:50%;
 
-    transform:translateY(-50%);
-
     width:70px;
     height:70px;
 
-    min-width:70px;
+    margin:0;
 
     padding:0;
 
-    background:transparent;
+    min-width:70px;
 
     border:none;
 
+    background:transparent;
+
     box-shadow:none;
 
-    color:#b8a07c;
+    font-size:54px;
 
-    font-size:80px;
+    color:#bca27d;
 
-    font-weight:bold;
+    transform:translateY(-50%);
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    z-index:100;
+    z-index:120;
 
 }
 
+
+/* ---------- 왼쪽 ---------- */
 
 .left-arrow{
 
-    left:35px;
+    left:45px;
 
 }
 
+
+/* ---------- 오른쪽 ---------- */
 
 .right-arrow{
 
-    right:35px;
+    right:45px;
 
 }
 
+
+/* ---------- Hover ---------- */
 
 .left-arrow:hover,
 .right-arrow:hover{
 
-    background:rgba(255,255,255,.08);
+    background:none;
+
+    color:white;
 
     transform:
         translateY(-50%)
-        scale(1.08);
+        scale(1.15);
 
 }
 
-/* ===================================================== */
 
-
-/* ---------- 화살표 ---------- */
+/* ---------- Click ---------- */
 
 .left-arrow:active,
 .right-arrow:active{
@@ -356,55 +376,11 @@ button:active{
 }
 
 
-.left-arrow:focus,
-.right-arrow:focus{
-
-    outline:none;
-
-}
-
-
-/* ---------- 홈 버튼 ---------- */
-
-.home-button:active{
-
-    transform:scale(.95);
-
-}
-
-
-/* ---------- 문단 ---------- */
-
-h1,
-h2,
-p{
-
-    user-select:none;
-
-}
-
-
-/* ---------- 일반 버튼 ---------- */
-
-button{
-
-    white-space:nowrap;
-
-}
-
-
-button:focus{
-
-    outline:none;
-
-}
-
-
 /* ---------- 조사 버튼 ---------- */
 
-button[id$="-button"]:hover{
+button[id$="-button"]{
 
-    filter:brightness(1.08);
+    letter-spacing:1px;
 
 }
 
@@ -413,57 +389,77 @@ button[id$="-button"]:hover{
 
 button[id*="back"]{
 
-    margin-top:18px;
+    margin-top:28px;
 
 }
+
+
+/* ---------- 다시 시작 ---------- */
+
+#restart-button{
+
+    margin-top:35px;
+
+}
+
+/* ===================================================== */
+/* 심야의 학교 */
+/* ===================================================== */
 
 
 /* ---------- 엔딩 ---------- */
 
 #ending{
 
-    background:#181818;
+    background:
+        radial-gradient(circle at top,
+            #2d2418 0%,
+            #181818 45%,
+            #080808 100%);
 
 }
 
 
 #ending h2{
 
-    color:#ffe066;
+    color:#f4d27a;
 
-    font-size:52px;
+    text-shadow:
+
+        0 0 10px rgba(255,215,120,.35);
 
 }
 
 
 #ending p{
 
-    font-size:24px;
-
-    line-height:2;
+    color:#ece3c9;
 
 }
 
 
-#restart-button{
+/* ---------- 포커스 제거 ---------- */
 
-    margin-top:35px;
+button:focus{
 
-    font-size:24px;
-
-}
-
-
-/* ---------- 화면 공통 ---------- */
-
-section{
-
-    gap:6px;
+    outline:none;
 
 }
 
 
-/* ---------- 스크롤 제거 ---------- */
+/* ---------- 선택 방지 ---------- */
+
+h1,
+h2,
+p,
+button{
+
+    user-select:none;
+
+}
+
+
+/* ---------- 스크롤 방지 ---------- */
 
 html,
 body{
@@ -473,19 +469,81 @@ body{
 }
 
 
-/* ---------- 부드러운 글꼴 ---------- */
+/* ---------- 반응형 ---------- */
 
-body{
+@media (max-width:900px){
 
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
+    section{
+
+        padding-top:110px;
+
+    }
+
+    h1{
+
+        font-size:64px;
+
+    }
+
+    h2{
+
+        font-size:44px;
+
+    }
+
+    p{
+
+        width:90%;
+
+        min-height:170px;
+
+        padding:28px;
+
+        font-size:22px;
+
+    }
+
+    button:not(.home-button):not(.left-arrow):not(.right-arrow){
+
+        width:90%;
+
+        max-width:320px;
+
+        font-size:20px;
+
+    }
+
+    .left-arrow,
+    .right-arrow{
+
+        font-size:46px;
+
+        left:auto;
+
+    }
+
+    .left-arrow{
+
+        left:20px;
+
+    }
+
+    .right-arrow{
+
+        right:20px;
+
+    }
 
 }
 
 
-/* ---------- 반응형 ---------- */
+@media (max-width:600px){
 
-@media (max-width:900px){
+    section{
+
+        padding-top:90px;
+
+    }
 
     h1{
 
@@ -501,110 +559,76 @@ body{
 
     p{
 
-        width:90%;
-
-        font-size:19px;
-
-    }
-
-    button:not(.home-button):not(.left-arrow):not(.right-arrow){
-
-        width:90%;
-
-        min-width:auto;
-
         font-size:18px;
 
-    }
-
-    .left-arrow,
-    .right-arrow{
-
-        width:60px;
-        height:60px;
-
-        min-width:60px;
-
-        font-size:34px;
-
-    }
-
-    .left-arrow{
-
-        left:15px;
-
-    }
-
-    .right-arrow{
-
-        right:15px;
-
-    }
-
-}
-
-
-@media (max-width:600px){
-
-    section{
-
-        padding:30px;
-
-    }
-
-    .home-button{
-
-        top:15px;
-        right:15px;
-
-        width:45px;
-        height:45px;
-
-        min-width:45px;
-
-        font-size:18px;
-
-    }
-
-    h1{
-
-        font-size:38px;
-
-    }
-
-    h2{
-
-        font-size:28px;
-
-    }
-
-    p{
-
-        font-size:17px;
+        min-height:150px;
 
         line-height:1.7;
 
     }
 
+    .home-button{
+
+        width:46px;
+        height:46px;
+
+        top:16px;
+        right:16px;
+
+    }
+
     .left-arrow,
     .right-arrow{
 
-        width:50px;
-        height:50px;
+        width:48px;
+        height:48px;
 
-        min-width:50px;
-
-        font-size:28px;
+        font-size:36px;
 
     }
 
 }
 
-button:not(.home-button):not(.left-arrow):not(.right-arrow){
 
-    min-width:220px;
+/* ---------- 화면 등장 ---------- */
+
+section{
+
+    animation:fade .35s ease;
 
 }
+
+
+/* ---------- 설명창 등장 ---------- */
+
+p{
+
+    animation:fade .45s ease;
+
+}
+
+
+/* ---------- 버튼 등장 ---------- */
+
+button{
+
+    animation:fade .5s ease;
+
+}
+
+
+/* ---------- 부드러운 전환 ---------- */
+
+button,
+.home-button,
+.left-arrow,
+.right-arrow{
+
+    transition:
+        all .2s ease;
+
+}
+
 
 /* ===================================================== */
 /* End */
