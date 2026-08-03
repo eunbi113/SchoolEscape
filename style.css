@@ -1,253 +1,140 @@
-/* ================================
+/* =========================
    기본 설정
-================================ */
+========================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    overflow:hidden;
-    font-family:"Malgun Gothic", sans-serif;
-    color:white;
+body {
+
+    font-family: "Malgun Gothic", sans-serif;
+
+    background: #0f172a;
+    color: white;
+
+    height: 100vh;
 }
 
-/* ================================
-   타이틀 화면
-================================ */
 
-.title-screen{
+/* =========================
+   화면 공통
+========================= */
 
-    position:relative;
+.screen {
 
-    width:100vw;
-    height:100vh;
+    width: 100%;
+    height: 100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
 
     background:
-    linear-gradient(
-        to bottom,
-        #08111f 0%,
-        #10213c 45%,
-        #18263d 100%
-    );
-
-    animation:fadeIn 1.5s ease;
+        linear-gradient(
+            to bottom,
+            #081120,
+            #16233d,
+            #243b55
+        );
 }
 
-/* ================================
-   밤하늘
-================================ */
+/* 화면 숨기기 */
 
-.sky{
-    position:absolute;
-    inset:0;
+.hidden{
+    display:none;
 }
 
-.moon{
 
-    position:absolute;
-
-    top:80px;
-    right:120px;
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    background:#f8f7dc;
-
-    box-shadow:
-        0 0 30px rgba(255,255,220,.4),
-        0 0 60px rgba(255,255,220,.2);
-
-}
-
-/* ================================
-   학교 실루엣
-================================ */
-
-.school{
-
-    position:absolute;
-
-    left:0;
-    bottom:0;
-
-    width:100%;
-    height:38%;
-
-}
-
-.building{
-
-    position:absolute;
-    bottom:0;
-
-    background:#0b0d12;
-
-}
-
-.main-building{
-
-    left:25%;
-    width:50%;
-    height:85%;
-}
-
-.left-building{
-
-    left:10%;
-    width:18%;
-    height:60%;
-}
-
-.right-building{
-
-    right:10%;
-    width:20%;
-    height:65%;
-}
-
-/* ================================
-   내용
-================================ */
-
-.content{
-
-    position:relative;
-    z-index:10;
-
-    text-align:center;
-
-    max-width:700px;
-
-    padding:20px;
-
-}
+/* =========================
+   제목
+========================= */
 
 h1{
 
-    font-size:64px;
-    font-weight:700;
-    letter-spacing:2px;
-
-    text-shadow:
-        0 0 15px rgba(255,255,255,.15);
-
+    font-size:56px;
+    margin-bottom:20px;
 }
 
-h1 span{
+h2{
 
-    display:block;
-
-    margin-top:12px;
-
-    font-size:24px;
-    font-weight:300;
-
-    color:#bfc8d6;
-
+    font-size:42px;
+    margin-bottom:30px;
 }
 
-.story{
-
-    margin-top:40px;
-
-    line-height:1.8;
-
-    color:#d8dde7;
+.subtitle{
 
     font-size:20px;
-
+    line-height:1.8;
+    margin-bottom:40px;
 }
 
-.buttons{
 
-    margin-top:55px;
+/* =========================
+   버튼
+========================= */
+
+.button-group{
 
     display:flex;
-    justify-content:center;
     gap:20px;
-
 }
 
 button{
 
-    width:180px;
-    height:55px;
+    padding:15px 35px;
+
+    font-size:18px;
 
     border:none;
     border-radius:8px;
 
-    background:#1f3558;
-
-    color:white;
-
-    font-size:18px;
-
     cursor:pointer;
 
-    transition:
-        transform .25s,
-        background .25s;
+    background:white;
+    color:#1f2937;
 
+    transition:.2s;
 }
 
-button:hover:not(:disabled){
+button:hover{
 
     transform:scale(1.05);
-
-    background:#305487;
-
 }
 
 button:disabled{
 
-    background:#555;
-
-    color:#999;
-
+    background:#666;
+    color:#bbb;
     cursor:not-allowed;
 
+    transform:none;
 }
 
-#message{
 
-    margin-top:30px;
+/* =========================
+   스토리 박스
+========================= */
 
-    min-height:24px;
+.story-box{
 
-    color:#d7e8ff;
+    max-width:700px;
 
-    font-size:16px;
+    padding:25px;
 
-}
+    margin-bottom:35px;
 
-/* ================================
-   애니메이션
-================================ */
+    border:1px solid rgba(255,255,255,.3);
 
-@keyframes fadeIn{
+    background:rgba(0,0,0,.25);
 
-    from{
-
-        opacity:0;
-        transform:translateY(15px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
+    line-height:1.8;
 }
