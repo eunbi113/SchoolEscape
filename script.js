@@ -806,31 +806,35 @@ function auditoriumMemoryGame(){
     const number = "19600513";
 
     alert(
-        "숫자를 기억하세요.\n\n" + number
+        "3초 동안 숫자를 기억하세요.\n\n" + number
     );
 
-    const answer = prompt(
-        "방금 본 숫자를 입력하세요."
-    );
+    setTimeout(()=>{
 
-    if(answer === null){
-
-        return;
-
-    }
-
-    if(answer.trim() === number){
-
-        getItem(
-            "memo2",
-            "메모를 발견했다!\n\n\비밀번호는 총 4자리이다."
+        const answer = prompt(
+            "방금 본 숫자를 입력하세요."
         );
 
-    }else{
+        if(answer === null){
 
-        alert("틀렸습니다.");
+            return;
 
-    }
+        }
+
+        if(answer.trim() === number){
+
+            getItem(
+                "memo2",
+                "메모를 발견했다!\n\n비밀번호는 총 4자리이다."
+            );
+
+        }else{
+
+            alert("틀렸습니다.");
+
+        }
+
+    },3000);
 
 }
 
