@@ -21,6 +21,9 @@ const stairs = document.getElementById("stairs");
 const basementHallway = document.getElementById("basement-hallway");
 const smallAuditorium = document.getElementById("small-auditorium");
 const computerRoom = document.getElementById("computer-room");
+const computerRoomDesk = document.getElementById("computer-room-desk");
+const computerRoomTeacher = document.getElementById("computer-room-teacher");
+const computerRoomBack = document.getElementById("computer-room-back");
 const practiceRoom = document.getElementById("practice-room");
 
 const firstFloorHallway = document.getElementById("first-floor-hallway");
@@ -171,16 +174,6 @@ document.getElementById("locker-button");
 
 const backSecondFloorFromClassroomButton =
 document.getElementById("back-second-floor-from-classroom-button");
-
-/* =========================================================
-   1. 새로 추가된 화면 가져오기
-========================================================= */
-
-const computerRoomDesk = document.getElementById("computer-room-desk");
-
-const computerRoomTeacher = document.getElementById("computer-room-teacher");
-
-const computerRoomBack = document.getElementById("computer-room-back");
 
 
 
