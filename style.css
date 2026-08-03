@@ -1,98 +1,71 @@
 /* ==========================================================
    style.css
    ----------------------------------------------------------
-   심야의 학교 게임 화면 디자인
+   심야의 학교
 
-   규칙
-   1. HTML은 수정하지 않습니다.
-   2. JavaScript는 수정하지 않습니다.
-   3. 기존 HTML 요소만 꾸밉니다.
-   4. 새로운 class나 id를 만들지 않습니다.
+   1. 전체 화면
+   2. 제목
+   3. 설명
+   4. 버튼
 ========================================================== */
 
 
 /* ==========================================================
    body
-   ----------------------------------------------------------
-   페이지 전체를 꾸미는 부분입니다.
 ========================================================== */
 
 body{
 
-    /* 브라우저 기본 여백 제거 */
     margin:0;
-
-    /* 안쪽 여백 제거 */
     padding:0;
 
-    /* 화면 전체 크기 */
     width:100vw;
     height:100vh;
 
-    /* 밤 분위기의 배경색 */
     background:#705e77;
 
-    /* 글자색 */
     color:white;
 
-    /* 글꼴 */
-    font-family:"맑은 고딕", sans-serif;
+    font-family:"맑은 고딕",sans-serif;
 
-    /* 모든 글자 가운데 정렬 */
-    text-align:center;
+    overflow:hidden;
 
-    /* 스크롤이 생길 수 있도록 설정 */
-    overflow:auto;
 }
 
 
 /* ==========================================================
    모든 화면(section)
-   ----------------------------------------------------------
-   모든 section이 화면 전체를 차지하도록 설정합니다.
 ========================================================== */
 
 section{
 
-    /* 화면 전체 너비 */
-    width:100vw;
-
-    /* 화면 전체 높이 */
-    height:100vh;
-
-    /* 가운데 정렬을 쉽게 하기 위해 flex 사용 */
-    display:flex;
-
-    /* 세로 방향 정렬 */
-    flex-direction:column;
-
-    /* 세로 가운데 */
-    justify-content:center;
-
-    /* 가로 가운데 */
-    align-items:center;
-
-    /* 안쪽 여백 */
-    padding:30px;
-
-    /* 크기 계산 */
-    box-sizing:border-box;
+    display:none;
 
     position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    box-sizing:border-box;
+
+    padding:40px;
+
+    text-align:center;
+
 }
 
 
 /* ==========================================================
-   게임 제목(h1)
+   제목(h1)
 ========================================================== */
 
 h1{
 
-    /* 제목 크기 */
-    font-size:150px;
+    font-size:110px;
 
-    /* 아래 여백 */
-    margin:100px auto 40px auto;
+    margin-top:80px;
+    margin-bottom:50px;
+
 }
 
 
@@ -102,378 +75,428 @@ h1{
 
 h2{
 
-    /* 제목 크기 */
-    font-size:130px;
+    font-size:70px;
 
-    /* 아래 여백 */
+    margin-top:40px;
     margin-bottom:40px;
+
 }
 
 
 /* ==========================================================
-   설명 글(p)
+   설명
 ========================================================== */
 
 p{
 
-    /* 설명 글 크기 */
-    font-size:40px;
+    width:900px;
 
-    /* 줄 간격 */
-    line-height:2;
+    margin:0 auto;
 
-    /* 여백 */
-    margin:100px auto 90px auto;
+    padding:25px;
 
-    /* 테두리 */
-    border:2px solid white;
+    font-size:28px;
 
-    /* 최대 너비 */
-    max-width:1000px;
+    line-height:1.8;
 
-    /* 안쪽 여백(위 오른쪽 아래 왼쪽) */
-    padding:10px 0px 10px 0px;
+    background:rgba(0,0,0,0.45);
 
-    /* 모서리 둥글게 */
-    border-radius:15px;
+    border-radius:20px;
+
 }
 
 
 /* ==========================================================
-   버튼(button)
+   공통 버튼
 ========================================================== */
 
 button{
 
-    /* 버튼 크기 */
-    width:350px;
-
-    /* 버튼 높이 */
-    height:80px;
-
-    /* 버튼 사이 간격 */
-    margin:10px;
-
-    /* 글자 크기 */
-    font-size:28px;
-
-    /* 글자를 굵게 */
-    font-weight:bold;
-
-    /* 글자색 */
-    color:white;
-
-    /* 버튼 배경색 */
-    background:#b27214;
-
-    /* 기본 테두리 제거 */
-    border:none;
-
-    /* 둥근 버튼 */
-    border-radius:50px;
-
-    /* 마우스를 올리면 손가락 모양 */
     cursor:pointer;
 
-    /* 색이 부드럽게 변경 */
-    transition:background-color 0.3s;
+    border:none;
+
+    border-radius:15px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    transition:0.2s;
+
 }
 
 
 /* ==========================================================
-   버튼에 마우스를 올렸을 때
+   버튼 hover
 ========================================================== */
 
 button:hover{
 
-    /* 더 밝은 주황색 */
-    background:#fea443;
+    transform:scale(1.05);
+
 }
 
 
 /* ==========================================================
-   아래는 현재 HTML에 있는 id입니다.
-
-   지금은 공통 디자인만 사용하므로
-   별도의 스타일은 작성하지 않았습니다.
-
-   나중에 각 장소마다
-   배경 이미지나 색상을 다르게 지정할 수 있습니다.
+   START 버튼
 ========================================================== */
 
-#title{}
+#start-button{
 
-#school-gate{}
+    display:block;
 
-#main-entrance{}
+    width:250px;
 
-#stairs{}
+    height:70px;
 
-#basement-hallway{}
+    margin:60px auto 20px auto;
 
-#small-auditorium{}
+    background:#f29b38;
 
-#computer-room{}
+    color:white;
 
-#practice-room{}
-
-#first-floor-hallway{}
-
-#auditorium{}
-
-#restroom{}
-
-#outdoor-stage{}
-
-#second-floor-hallway{}
-
-#classroom{}
-
-#ending{}
-
-/* ==========================================================
-   🏠 버튼 위치 설정
-
-   각 section의 첫 번째 버튼을
-   오른쪽 위에 배치합니다.
-
-   HTML 수정 없이 버튼 위치만 변경합니다.
-========================================================== */
-
-section{
-    position:relative;
 }
 
+
+/* ==========================================================
+   이어하기
+========================================================== */
+
+#continue-button{
+
+    display:block;
+
+    width:250px;
+
+    height:70px;
+
+    margin:0 auto;
+
+    background:#4f6077;
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   홈 버튼
+========================================================== */
 
 .home-button{
 
-    /* 오른쪽 위 위치 고정 */
     position:absolute;
 
-    /* 위쪽 위치 */
-    top:30px;
+    top:25px;
 
-    /* 오른쪽 위치 */
-    right:30px;
+    right:25px;
 
-    /* 버튼 크기 */
     width:60px;
-    height:30px;
 
-    /* 글자 크기 */
-    font-size:24px;
+    height:60px;
 
-    /* 기존 버튼 스타일 유지 */
-    padding:0;
+    border-radius:50%;
 
-    /* 가운데 정렬 */
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background:white;
+
+    color:black;
+
+    font-size:28px;
 
 }
 
-/* ==========================================================
-   컴퓨터실 세부 화면 추가 디자인
-   ----------------------------------------------------------
-   기존 CSS는 유지합니다.
-   
-   새로 추가된 3개의 section만 꾸밉니다.
-
-   1. computer-room-desk
-      - 컴퓨터실 기본 화면
-
-   2. computer-room-teacher
-      - 교탁 화면
-
-   3. computer-room-back
-      - 뒤편 화면
-========================================================== */
-
-
-/* ==========================================================
-   컴퓨터실 화면 공통 디자인
-   ----------------------------------------------------------
-   세 화면 모두 같은 분위기를 유지합니다.
-========================================================== */
-
-#computer-room-desk,
-#computer-room-teacher,
-#computer-room-back{
-
-    /* 화면 전체 사용 */
-    width:100vw;
-    height:100vh;
-
-    /* 가운데 정렬 */
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    /* 크기 계산 */
-    box-sizing:border-box;
-
-}
-
-
-/* ==========================================================
-   컴퓨터실 기본 화면
-========================================================== */
-
-#computer-room-desk{
-
-    /* 어두운 컴퓨터실 분위기 */
-    background:#62556b;
-
-}
-
-
-/* ==========================================================
-   컴퓨터실 교탁 화면
-========================================================== */
-
-#computer-room-teacher{
-
-    /* 조금 더 밝은 회색 계열 */
-    background:#574b61;
-
-}
-
-
-/* ==========================================================
-   컴퓨터실 뒤편 화면
-========================================================== */
-
-#computer-room-back{
-
-    /* 오래된 창고 느낌의 어두운 색 */
-    background:#403847;
-
-}
-
-
-/* ==========================================================
-   컴퓨터실 화면 제목
-========================================================== */
-
-#computer-room-desk h2,
-#computer-room-teacher h2,
-#computer-room-back h2{
-
-    /* 기존 h2와 같은 크기 유지 */
-    font-size:130px;
-
-}
-
-
-/* ==========================================================
-   컴퓨터실 설명 글
-========================================================== */
-
-#computer-room-desk p,
-#computer-room-teacher p,
-#computer-room-back p{
-
-    /* 기존 p 디자인 유지 */
-    font-size:40px;
-
-    line-height:2;
-
-    max-width:1000px;
-
-}
-
-
-/* ==========================================================
-   컴퓨터실 이동 버튼
-   ----------------------------------------------------------
-   기존 button 디자인을 사용하지만
-   이 화면에서도 잘 보이도록 추가 설정합니다.
-========================================================== */
-
-#computer-room-desk button,
-#computer-room-teacher button,
-#computer-room-back button{
-
-    /* 버튼 간격 */
-    margin:10px;
-
-}
 
 /* ==========================================================
    화살표 버튼
 ========================================================== */
 
-/* 왼쪽 화살표 */
-#left-button{
+.left-arrow,
+.right-arrow{
 
-    /* 화면의 왼쪽에 배치 */
     position:absolute;
-    left:50px;
 
-    /* 세로 가운데 */
     top:50%;
+
     transform:translateY(-50%);
 
-    /* 버튼 크기 */
     width:80px;
+
     height:80px;
 
-    /* 배경 제거 */
     background:none;
 
-    /* 테두리 제거 */
     border:none;
 
-    /* 글자 크기 */
     font-size:60px;
 
-    /* 버튼 간격 제거 */
-    margin:0;
 }
 
 
-/* 오른쪽 화살표 */
-#right-button{
+.left-arrow{
 
-    /* 화면의 오른쪽에 배치 */
-    position:absolute;
-    right:50px;
+    left:30px;
 
-    /* 세로 가운데 */
-    top:50%;
-    transform:translateY(-50%);
-
-    /* 버튼 크기 */
-    width:80px;
-    height:80px;
-
-    /* 배경 제거 */
-    background:none;
-
-    /* 테두리 제거 */
-    border:none;
-
-    /* 글자 크기 */
-    font-size:60px;
-
-    /* 버튼 간격 제거 */
-    margin:0;
 }
 
 
-/* 마우스를 올렸을 때 */
-#left-button:hover,
-#right-button:hover{
+.right-arrow{
 
-    /* 배경색 유지 */
+    right:30px;
+
+}
+
+
+.left-arrow:hover,
+.right-arrow:hover{
+
     background:none;
 
-    /* 조금 커지는 효과 */
     transform:translateY(-50%) scale(1.2);
 
 }
+
+
+/* ==========================================================
+   조사 버튼
+========================================================== */
+
+button[id*="investigate"]{
+
+    display:block;
+
+    width:220px;
+
+    height:60px;
+
+    margin:50px auto 20px auto;
+
+    background:#f29b38;
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   복도로 돌아가기 버튼
+========================================================== */
+
+button[id*="back-"]{
+
+    display:block;
+
+    width:250px;
+
+    height:60px;
+
+    margin:20px auto;
+
+    background:#505050;
+
+    color:white;
+
+}
+/* ==========================================================
+   장소별 공통 스타일
+========================================================== */
+
+/*
+   지금은 모든 장소가 같은 색을 사용합니다.
+   나중에 background-image만 추가하면 됩니다.
+*/
+
+#school-gate,
+#main-entrance,
+#stairs,
+
+#basement-hallway,
+#small-auditorium-stage,
+
+#computer-room-desk,
+#computer-room-teacher,
+#computer-room-back,
+
+#practice-room-board,
+#practice-room-mirror,
+#practice-room-drum,
+
+#first-floor-hallway,
+
+#auditorium-seat,
+#auditorium-stage,
+#auditorium-aircon,
+
+#restroom-sink,
+#restroom-toilet,
+
+#outdoor-stage-seat,
+#outdoor-stage-stage,
+#outdoor-stage-stair,
+
+#second-floor-hallway,
+
+#classroom-board,
+#classroom-desk,
+#classroom-locker,
+
+#ending{
+
+    background:#705e77;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+/* ==========================================================
+   제목 위치
+========================================================== */
+
+#title h1{
+
+    margin-top:120px;
+
+}
+
+
+section h2{
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   설명 위치
+========================================================== */
+
+section p{
+
+    margin-top:40px;
+
+    margin-bottom:50px;
+
+}
+
+
+/* ==========================================================
+   조사 버튼 간격
+========================================================== */
+
+button[id*="investigate"]{
+
+    margin-top:40px;
+
+}
+
+
+/* ==========================================================
+   복도로 돌아가기 버튼
+========================================================== */
+
+button[id*="back-"]{
+
+    margin-top:20px;
+
+}
+
+
+/* ==========================================================
+   버튼 활성화 효과
+========================================================== */
+
+button:active{
+
+    transform:scale(0.95);
+
+}
+
+
+/* ==========================================================
+   버튼 포커스 제거
+========================================================== */
+
+button:focus{
+
+    outline:none;
+
+}
+
+
+/* ==========================================================
+   배경 이미지 넣는 위치
+
+   나중에 이미지만 추가하면 됩니다.
+========================================================== */
+
+/*
+
+예시)
+
+#computer-room-desk{
+
+    background-image:url("image/computer-room-desk.png");
+
+}
+
+#computer-room-teacher{
+
+    background-image:url("image/computer-room-teacher.png");
+
+}
+
+#computer-room-back{
+
+    background-image:url("image/computer-room-back.png");
+
+}
+
+*/
+
+
+/* ==========================================================
+   모바일 대응
+
+   (나중에 수정 가능)
+========================================================== */
+
+@media screen and (max-width:1000px){
+
+    h1{
+
+        font-size:70px;
+
+    }
+
+    h2{
+
+        font-size:48px;
+
+    }
+
+    p{
+
+        width:90%;
+
+        font-size:22px;
+
+    }
+
+    .left-arrow,
+    .right-arrow{
+
+        font-size:45px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   끝
+========================================================== */
