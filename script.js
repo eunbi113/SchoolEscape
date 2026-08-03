@@ -131,9 +131,13 @@ connect(
     "school-gate"
 );
 
-connect(
-    "continue-button",
-    "school-gate"
+const continueButton = document.getElementById("continue-button");
+
+continueButton.addEventListener("click", () => {
+
+    loadGame();
+
+});
 );
 
 
@@ -1080,8 +1084,6 @@ miniGame(
     "classroom-locker-button",
     classroomPasswordGame
 );
-
-loadGame();
 
 /* ----------------------------------------------------- */
 /* 엔딩 아이템 */
