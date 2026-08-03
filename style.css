@@ -228,3 +228,33 @@ button:hover{
 #classroom{}
 
 #ending{}
+
+/* ==========================================================
+   🏠 처음으로 버튼 위치 설정
+
+   각 section의 첫 번째 버튼을
+   오른쪽 위에 배치합니다.
+
+   HTML 수정 없이 버튼 위치만 변경합니다.
+========================================================== */
+
+section{
+    position:relative;
+}
+
+
+section button:first-of-type{
+
+    /* 오른쪽 위 위치 */
+    position:absolute;
+
+    top:40px;
+    right:40px;
+
+    /* 처음으로 버튼 크기 */
+    width:220px;
+    height:60px;
+
+    /* 글자 크기 */
+    font-size:24px;
+}
