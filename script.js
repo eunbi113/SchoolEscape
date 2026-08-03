@@ -1,38 +1,124 @@
-/* ==========================================
-   심야의 학교
-   The Midnight School
+/* ======================================
+   학교 방탈출 게임
+   최초 버전
+====================================== */
 
-   앞으로 모든 기능은
-   이 파일에 계속 추가한다.
-========================================== */
+/*
+    화면 목록
+
+    - titleScreen
+    - gateScreen
+    - entranceScreen
+
+    앞으로 화면을 추가할 때는
+    HTML에 section을 추가하고
+    showScreen()만 호출하면 된다.
+*/
 
 
-/* ==========================================
-   시작 화면
-========================================== */
+// -----------------------------
+// 화면 요소
+// -----------------------------
 
-const startButton = document.getElementById("startButton");
-const message = document.getElementById("message");
+const titleScreen = document.getElementById("titleScreen");
+const gateScreen = document.getElementById("gateScreen");
+const entranceScreen = document.getElementById("entranceScreen");
 
 
-startButton.addEventListener("click", function(){
+// -----------------------------
+// 버튼
+// -----------------------------
 
-    message.textContent = "다음 단계에서 교문 화면이 연결됩니다.";
+const newGameBtn = document.getElementById("newGameBtn");
+const continueBtn = document.getElementById("continueBtn");
+
+const enterSchoolBtn = document.getElementById("enterSchoolBtn");
+const stairsBtn = document.getElementById("stairsBtn");
+
+
+// -----------------------------
+// 화면 전환 함수
+// -----------------------------
+
+function showScreen(screen) {
+
+    titleScreen.classList.add("hidden");
+    gateScreen.classList.add("hidden");
+    entranceScreen.classList.add("hidden");
+
+    screen.classList.remove("hidden");
+
+}
+
+
+// -----------------------------
+// 이어하기 버튼 상태 확인
+// -----------------------------
+
+function checkSaveData() {
+
+    const saveData = localStorage.getItem("schoolEscapeSave");
+
+    if (saveData) {
+        continueBtn.disabled = false;
+    } else {
+        continueBtn.disabled = true;
+    }
+
+}
+
+
+// -----------------------------
+// 새 게임
+// -----------------------------
+
+newGameBtn.addEventListener("click", function () {
+
+    // 앞으로 저장 데이터가 늘어나도
+    // 여기에서 초기화하면 된다.
+    localStorage.removeItem("schoolEscapeSave");
+
+    showScreen(gateScreen);
 
 });
 
 
-/* ==========================================
-   앞으로 추가될 기능
+// -----------------------------
+// 이어하기
+// -----------------------------
 
-   - 화면 전환
-   - 교문
-   - 이동
-   - 아이템
-   - 퍼즐
-   - 인벤토리
-   - 저장
-   - 효과음
-   - 엔딩
+continueBtn.addEventListener("click", function () {
 
-========================================== */
+    // 아직 저장 기능은 구현하지 않았다.
+    alert("이어하기 기능은 추후 구현됩니다.");
+
+});
+
+
+// -----------------------------
+// 교문 → 정문 입구
+// -----------------------------
+
+enterSchoolBtn.addEventListener("click", function () {
+
+    showScreen(entranceScreen);
+
+});
+
+
+// -----------------------------
+// 정문 입구 → 계단
+// -----------------------------
+
+stairsBtn.addEventListener("click", function () {
+
+    alert("계단은 다음 단계에서 구현됩니다.");
+
+});
+
+
+// -----------------------------
+// 시작
+// -----------------------------
+
+checkSaveData();
