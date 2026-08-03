@@ -123,18 +123,25 @@
 <!-- 중강당 -->
 <!-- ===================================================== -->
 
-<section id="small-auditorium">
+<section id="small-auditorium-stage">
 
-    <button id="home-small-auditorium" class="home-button">🏠</button>
+    <!-- 처음으로 -->
+    <button id="home-small-auditorium-stage" class="home-button">🏠</button>
 
     <h2>중강당</h2>
 
     <p>
         넓은 중강당이다. <br>
-        특별한 단서는 보이지 않는다.
+        무대 위는 조용하다.
     </p>
 
-    <button id="back-basement-from-auditorium-button">복도로 돌아가기</button>
+    <!-- 조사 -->
+    <button id="small-auditorium-stage-button">무대</button>
+
+    <!-- 복도로 돌아가기 -->
+    <button id="back-basement-from-small-auditorium-button">복도로 돌아가기</button>
+
+</section>
 
 
 </section>
@@ -155,6 +162,8 @@
         컴퓨터들이 줄지어 놓여 있는 컴퓨터실이다. <br>
         책상과 주변을 살펴볼 수 있다.
     </p>
+
+    <button id="desk-investigate-button">책상</button>
 
     <!-- 다른 장소를 살펴보는 이동 버튼 -->
 <button id="desk-to-back-button" class="right-arrow">▶️</button>
@@ -182,6 +191,8 @@
         특별한 단서는 아직 보이지 않는다.
     </p>
 
+    <button id="teacher-investigate-button">모니터</button>
+    
     <!-- 다른 위치로 이동 -->
     <button id="teacher-to-desk-button" class="right-arrow">▶️</button>
 
@@ -207,6 +218,8 @@
         주변을 더 살펴볼 수 있다.
     </p>
 
+    <button id="back-investigate-button">거울</button>
+    
     <!-- 다른 위치로 이동 -->
     <button id="back-to-desk-button" class="left-arrow">◀️</button>
 
@@ -216,22 +229,80 @@
 </section>
 
 <!-- ===================================================== -->
-<!-- 연습실 -->
+<!-- 연습실 - 칠판 -->
 <!-- ===================================================== -->
 
-<section id="practice-room">
+<section id="practice-room-board">
 
-    <button id="home-practice-room" class="home-button">🏠</button>
+    <button id="home-practice-room-board" class="home-button">🏠</button>
 
     <h2>연습실</h2>
 
     <p>
-        학생들이 연습하는 공간이다. <br>
-        조용한 분위기가 감돈다.
+        연습실의 칠판 앞이다. <br>
+        칠판에 무언가 적혀 있는 것 같다.
     </p>
 
-    <button id="back-basement-from-practice-button">복도로 돌아가기</button>
+    <!-- 이동 -->
+    <button id="board-to-drum-button" class="right-arrow">▶️</button>
+    <button id="board-to-mirror-button" class="left-arrow">◀️</button>
 
+    <!-- 조사 -->
+    <button id="board-button">칠판</button>
+
+    <!-- 복도로 -->
+    <button id="back-basement-from-practice-board-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 연습실 - 거울 -->
+<!-- ===================================================== -->
+
+<section id="practice-room-mirror">
+
+    <button id="home-practice-room-mirror" class="home-button">🏠</button>
+
+    <h2>연습실 - 거울</h2>
+
+    <p>
+        커다란 거울이 벽을 가득 채우고 있다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="mirror-to-board-button" class="right-arrow">▶️</button>
+
+    <!-- 조사 -->
+    <button id="mirror-button">거울</button>
+
+    <!-- 복도로 -->
+    <button id="back-basement-from-practice-mirror-button">복도로 돌아가기</button>
+
+</section>   
+
+<!-- ===================================================== -->
+<!-- 연습실 - 장구 -->
+<!-- ===================================================== -->
+
+<section id="practice-room-drum">
+
+    <button id="home-practice-room-drum" class="home-button">🏠</button>
+
+    <h2>연습실 - 장구</h2>
+
+    <p>
+        여러 개의 장구가 가지런히 놓여 있다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="drum-to-board-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="drum-button">장구</button>
+
+    <!-- 복도로 -->
+    <button id="back-basement-from-practice-drum-button">복도로 돌아가기</button>
+  
 </section>
 
 <!-- ===================================================== -->
@@ -257,59 +328,213 @@
 </section>
 
 <!-- ===================================================== -->
-<!-- 강당 -->
+<!-- 강당 - 객석 -->
 <!-- ===================================================== -->
 
-<section id="auditorium">
+<section id="auditorium-seat">
 
-    <button id="home-auditorium" class="home-button">🏠</button>
+    <button id="home-auditorium-seat" class="home-button">🏠</button>
 
     <h2>강당</h2>
 
     <p>
-        학교 행사가 열리는 큰 강당이다. <br>
-        안은 매우 조용하다.
+        넓은 강당의 객석이다. <br>
+        무대가 정면에 보인다.
     </p>
 
-    <button id="back-first-floor-from-auditorium-button">복도로 돌아가기</button>
+    <!-- 이동 -->
+    <button id="seat-to-stage-button" class="right-arrow">▶️</button>
+    <button id="seat-to-aircon-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="seat-button">객석</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-seat-button">복도로 돌아가기</button>
 
 </section>
 
 <!-- ===================================================== -->
-<!-- 화장실 -->
+<!-- 강당 - 무대 -->
 <!-- ===================================================== -->
 
-<section id="restroom">
+<section id="auditorium-stage">
 
-    <button id="home-restroom" class="home-button">🏠</button>
+    <button id="home-auditorium-stage" class="home-button">🏠</button>
+
+    <h2>강당 - 무대</h2>
+
+    <p>
+        넓은 무대가 눈앞에 펼쳐져 있다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="stage-to-seat-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="stage-button">무대</button>
+    <button id="curtain-button">커튼</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-stage-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 강당 - 에어컨 -->
+<!-- ===================================================== -->
+
+<section id="auditorium-aircon">
+
+    <button id="home-auditorium-aircon" class="home-button">🏠</button>
+
+    <h2>강당 - 에어컨</h2>
+
+    <p>
+        에어컨에서 이상하게 냉기가 느껴진다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="aircon-to-seat-button" class="right-arrow">▶️</button>
+
+    <!-- 조사 -->
+    <button id="aircon-button">에어컨</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-aircon-button">
+        복도로 돌아가기
+    </button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 화장실 - 세면대 -->
+<!-- ===================================================== -->
+
+<section id="restroom-sink">
+
+    <button id="home-restroom-sink" class="home-button">🏠</button>
 
     <h2>화장실</h2>
 
     <p>
-        복도 옆 화장실이다. <br>
-        특별한 물건은 보이지 않는다.
+        화장실 세면대 앞이다.
     </p>
 
-    <button id="back-first-floor-from-restroom-button">복도로 돌아가기</button>
+    <!-- 이동 -->
+    <button id="sink-to-toilet-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="sink-button">세면대</button>
+    <button id="sink-button">거울</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-sink-button">복도로 돌아가기</button>
 
 </section>
 
 <!-- ===================================================== -->
-<!-- 야외공연장 -->
+<!-- 화장실 - 변기칸 -->
 <!-- ===================================================== -->
 
-<section id="outdoor-stage">
+<section id="restroom-toilet">
 
-    <button id="home-outdoor-stage" class="home-button">🏠</button>
+    <button id="home-restroom-toilet" class="home-button">🏠</button>
+
+    <h2>화장실 - 변기칸</h2>
+
+    <p>
+        조용한 변기칸이다. <br>
+        특별한 소리는 들리지 않는다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="toilet-to-sink-button" class="right-arrow">▶️</button>
+
+    <!-- 조사 -->
+    <button id="toilet-button">변기</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-toilet-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 야외공연장 - 객석 -->
+<!-- ===================================================== -->
+
+<section id="outdoor-stage-seat">
+
+    <button id="home-outdoor-stage-seat" class="home-button">🏠</button>
 
     <h2>야외공연장</h2>
 
     <p>
-        학교 야외공연장이다. <br>
+        야외공연장의 객석이다. <br>
         밤이라 주변이 어둡다.
     </p>
 
-    <button id="back-first-floor-from-stage-button">복도로 돌아가기</button>
+    <!-- 이동 -->
+    <button id="seat-to-stair-button" class="right-arrow">▶️</button>
+    <button id="seat-to-stage-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="outdoor-seat-button">객석</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-outdoor-seat-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 야외공연장 - 무대 -->
+<!-- ===================================================== -->
+
+<section id="outdoor-stage-stage">
+
+    <button id="home-outdoor-stage-stage" class="home-button">🏠</button>
+
+    <h2>야외공연장 - 무대</h2>
+
+    <p>
+        공연이 열리는 무대다. <br>
+        주변을 둘러볼 수 있다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="stage-to-seat-button" class="right-arrow">▶️</button>
+
+    <!-- 조사 -->
+    <button id="outdoor-stage-button">무대</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-outdoor-stage-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 야외공연장 - 계단 -->
+<!-- ===================================================== -->
+
+<section id="outdoor-stage-stair">
+
+    <button id="home-outdoor-stage-stair" class="home-button">🏠</button>
+
+    <h2>야외공연장 - 계단</h2>
+
+    <p>
+        바깥으로 이어지는 계단이다. <br>
+        위쪽에서 공연장을 내려다볼 수 있다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="stair-to-seat-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="stair-button">계단</button>
+
+    <!-- 복도로 -->
+    <button id="back-first-floor-from-outdoor-stair-button">복도로 돌아가기</button>
 
 </section>
 
@@ -334,22 +559,79 @@
 </section>
 
 <!-- ===================================================== -->
-<!-- 교실 -->
+<!-- 교실 - 칠판 -->
 <!-- ===================================================== -->
 
-<section id="classroom">
+<section id="classroom-board">
 
-    <button id="home-classroom" class="home-button">🏠</button>
+    <button id="home-classroom-board" class="home-button">🏠</button>
 
     <h2>교실</h2>
 
     <p>
-        드디어 교실에 도착했다. <br>
-        사물함을 조사하면 악보를 찾을 수도 있다.
+        교실의 칠판 앞이다. <br>
+        익숙한 교실 풍경이 보인다.
     </p>
 
+    <!-- 이동 -->
+    <button id="board-to-desk-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="classroom-board-button">칠판</button>
+
+    <!-- 복도로 -->
+    <button id="back-second-floor-from-board-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 교실 - 책상 -->
+<!-- ===================================================== -->
+
+<section id="classroom-desk">
+
+    <button id="home-classroom-desk" class="home-button">🏠</button>
+
+    <h2>교실 - 책상</h2>
+
+    <p>
+        학생들의 책상이 줄지어 놓여 있다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="desk-to-board-button" class="right-arrow">▶️</button>
+    <button id="desk-to-locker-button" class="left-arrow">◀️</button>
+
+    <!-- 조사 -->
+    <button id="classroom-desk-button">책상</button>
+
+    <!-- 복도로 -->
+    <button id="back-second-floor-from-desk-button">복도로 돌아가기</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- 교실 - 사물함 -->
+<!-- ===================================================== -->
+
+<section id="classroom-locker">
+
+    <button id="home-classroom-locker" class="home-button">🏠</button>
+
+    <h2>교실 - 사물함</h2>
+
+    <p>
+        교실 뒤편 사물함이 보인다.
+    </p>
+
+    <!-- 이동 -->
+    <button id="locker-to-desk-button" class="right-arrow">▶️</button>
+
+    <!-- 조사 -->
     <button id="locker-button">사물함</button>
-    <button id="back-second-floor-from-classroom-button">복도로 돌아가기</button>
+
+    <!-- 복도로 -->
+    <button id="back-second-floor-from-locker-button">복도로 돌아가기</button>
 
 </section>
 
