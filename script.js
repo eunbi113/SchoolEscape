@@ -27,21 +27,26 @@ function saveGame(){
 
 function loadGame(){
 
-    const savedInventory=localStorage.getItem("inventory");
+    const savedInventory = localStorage.getItem("inventory");
 
     if(savedInventory){
 
+        inventory.length = 0;
         inventory.push(...JSON.parse(savedInventory));
 
     }
 
     updateInventory();
 
-    const savedScreen=localStorage.getItem("screen");
+    const savedScreen = localStorage.getItem("screen");
 
     if(savedScreen){
 
         show(savedScreen);
+
+    }else{
+
+        alert("저장된 게임이 없습니다.");
 
     }
 
@@ -126,15 +131,10 @@ function home(buttonId){
 /* 시작 */
 /* ----------------------------------------------------- */
 
-const startButton = document.getElementById("start-button");
-
-startButton.addEventListener("click", () => {
-
-    newGame();
-
-    show("school-gate");
-
-});
+connect(
+    "start-button",
+    "school-gate"
+);
 
 const continueButton = document.getElementById("continue-button");
 
