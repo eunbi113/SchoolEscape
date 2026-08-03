@@ -120,8 +120,8 @@ p{
     /* 줄 간격 */
     line-height:2;
 
-    /* 아래 여백 */
-    margin-bottom:60px;
+    /* 여백 */
+    margin:20px auto 60px auto;
 }
 
 
