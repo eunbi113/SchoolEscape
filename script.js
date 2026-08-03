@@ -641,9 +641,76 @@ function getItem(itemName,message){
 
     }
 
-    inventory.push(itemName);
+inventory.push(itemName);
 
-    alert(message);
+updateInventory();
+
+alert(message);
+
+}
+
+function updateInventory(){
+
+    const list=document.getElementById("inventory-list");
+
+    list.innerHTML="";
+
+    const items={
+
+        memo1:{
+            name:"📝 메모①",
+            message:"열쇠는 1층에 있다."
+        },
+
+        memo2:{
+            name:"📝 메모②",
+            message:"비밀번호는 총 4자리이다."
+        },
+
+        hint1:{
+            name:"💡 힌트①",
+            message:"첫 번째 숫자는 무용과의 반 번호이다."
+        },
+
+        hint2:{
+            name:"💡 힌트②",
+            message:"두 번째 숫자는 음연과의 반 번호이다."
+        },
+
+        hint3:{
+            name:"💡 힌트③",
+            message:"세 번째와 네 번째 숫자는 우리 학교 전공 개수이다."
+        },
+
+        key:{
+            name:"🗝️ 열쇠",
+            message:"화장실에서 발견한 열쇠이다."
+        },
+
+        score:{
+            name:"🎼 악보",
+            message:"드디어 악보를 찾았다."
+        }
+
+    };
+
+    inventory.forEach(item=>{
+
+        const li=document.createElement("li");
+
+        li.textContent=items[item].name;
+
+        li.style.cursor="pointer";
+
+        li.addEventListener("click",()=>{
+
+            alert(items[item].message);
+
+        });
+
+        list.appendChild(li);
+
+    });
 
 }
 
@@ -741,30 +808,30 @@ function restroomPuzzleGame(){
 
 function practiceRoomHint(){
 
-    alert(
+    getItem(
         "칠판에 글씨가 적혀 있다.\n\n" +
-        "\"첫 번째 숫자는\n" +
-        "무용과의 반 번호이다.\""
+        "hint1",
+        "첫 번째 숫자는 무용과의 반 번호이다."
     );
 
 }
 
 function outdoorStageHint(){
 
-    alert(
+    getItem(
         "무대 바닥에 메모가 떨어져 있다.\n\n" +
-        "\"세 번째와 네 번째 숫자는\n" +
-        "우리 학교의 전공 개수이다.\""
+        "hint3",
+        "세 번째와 네 번째 숫자는 우리 학교의 전공 개수이다."
     );
 
 }
 
-function auditoriumStageHint(){
+function auditoriumHint(){
 
-    alert(
+    getItem(
         "무대 바닥에 메모가 떨어져 있다.\n\n" +
-        "\"두 번째 숫자는\n" +
-        "음연과의 반 번호이다.\""
+        "hint2",
+        "두 번째 숫자는 음연과의 반 번호이다."
     );
 
 }
@@ -895,6 +962,33 @@ investigate(
     "익숙한 책상이다."
 );
 
+function practiceRoomHint(){
+
+    getItem(
+        "hint1",
+        "첫 번째 힌트를 기록했다."
+    );
+
+}
+
+function auditoriumHint(){
+
+    getItem(
+        "hint2",
+        "두 번째 힌트를 기록했다."
+    );
+
+}
+
+function outdoorStageHint(){
+
+    getItem(
+        "hint3",
+        "세 번째 힌트를 기록했다."
+    );
+
+}
+
 miniGame(
     "computer-room-teacher-button",
     computerRoomMathGame
@@ -923,6 +1017,21 @@ miniGame(
 miniGame(
     "auditorium-stage-button",
     auditoriumStageHint
+);
+
+miniGame(
+    "practice-room-board-button",
+    practiceRoomHint
+);
+
+miniGame(
+    "auditorium-stage-button",
+    auditoriumHint
+);
+
+miniGame(
+    "outdoor-stage-stage-button",
+    outdoorStageHint
 );
 
 miniGame(
