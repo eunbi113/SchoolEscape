@@ -1015,26 +1015,12 @@ miniGame(
 miniGame(
     "outdoor-stage-stage-button",
     outdoorStageHint
-);
 
-miniGame(
-    "auditorium-curtain-button",
-    auditoriumMemoryGame
-);
-
-miniGame(
-    "practice-room-board-button",
-    practiceRoomHint
 );
 
 miniGame(
     "auditorium-stage-button",
     auditoriumHint
-);
-
-miniGame(
-    "outdoor-stage-stage-button",
-    outdoorStageHint
 );
 
 miniGame(
