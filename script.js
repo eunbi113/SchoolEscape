@@ -799,8 +799,8 @@ investigate(
 );
 
 investigate(
-    "restroom-sink-mirror-button",
-    "거울 속에 내 모습이 비친다."
+    "restroom-sink-button",
+    "물이 나오지 않는다."
 );
 
 investigate(
