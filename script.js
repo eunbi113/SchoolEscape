@@ -674,6 +674,39 @@ function computerRoomMathGame(){
 
 }
 
+function auditoriumMemoryGame(){
+
+    const number = "19600513";
+
+    alert(
+        "숫자를 기억하세요.\n\n" + number
+    );
+
+    const answer = prompt(
+        "방금 본 숫자를 입력하세요."
+    );
+
+    if(answer === null){
+
+        return;
+
+    }
+
+    if(answer.trim() === number){
+
+        getItem(
+            "memo2",
+            "메모를 발견했다!\n\n\비밀번호는 총 4자리이다.\"
+        );
+
+    }else{
+
+        alert("틀렸습니다.");
+
+    }
+
+}
+
 /* ----------------------------------------------------- */
 /* 엔딩 */
 /* ----------------------------------------------------- */
@@ -768,6 +801,10 @@ miniGame(
     computerRoomMathGame
 );
 
+miniGame(
+    "auditorium-curtain-button",
+    auditoriumMemoryGame
+);
 
 /* ----------------------------------------------------- */
 /* 엔딩 아이템 */
