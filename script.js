@@ -789,7 +789,7 @@ function classroomPasswordGame(){
 
     }
 
-    if(answer.trim() === "21216"){
+    if(answer.trim() === "1216"){
 
         getItem(
             "score",
