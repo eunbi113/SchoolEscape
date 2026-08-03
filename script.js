@@ -1,7 +1,7 @@
-/* ======================================
+/* =====================================
    학교 방탈출 게임
    최초 버전
-====================================== */
+===================================== */
 
 /*
     화면 목록
@@ -10,24 +10,22 @@
     - gateScreen
     - entranceScreen
 
-    앞으로 화면을 추가할 때는
+    앞으로 새로운 화면을 만들 때는
     HTML에 section을 추가하고
-    showScreen()만 호출하면 된다.
+    showScreen()에만 등록하면 된다.
 */
 
-
-// -----------------------------
+// =========================
 // 화면 요소
-// -----------------------------
+// =========================
 
 const titleScreen = document.getElementById("titleScreen");
 const gateScreen = document.getElementById("gateScreen");
 const entranceScreen = document.getElementById("entranceScreen");
 
-
-// -----------------------------
-// 버튼
-// -----------------------------
+// =========================
+// 버튼 요소
+// =========================
 
 const newGameBtn = document.getElementById("newGameBtn");
 const continueBtn = document.getElementById("continueBtn");
@@ -35,10 +33,9 @@ const continueBtn = document.getElementById("continueBtn");
 const enterSchoolBtn = document.getElementById("enterSchoolBtn");
 const stairsBtn = document.getElementById("stairsBtn");
 
-
-// -----------------------------
-// 화면 전환 함수
-// -----------------------------
+// =========================
+// 화면 전환
+// =========================
 
 function showScreen(screen) {
 
@@ -47,57 +44,46 @@ function showScreen(screen) {
     entranceScreen.classList.add("hidden");
 
     screen.classList.remove("hidden");
-
 }
 
+// =========================
+// 이어하기 버튼 상태
+// =========================
 
-// -----------------------------
-// 이어하기 버튼 상태 확인
-// -----------------------------
-
-function checkSaveData() {
+function updateContinueButton() {
 
     const saveData = localStorage.getItem("schoolEscapeSave");
 
-    if (saveData) {
-        continueBtn.disabled = false;
-    } else {
-        continueBtn.disabled = true;
-    }
-
+    continueBtn.disabled = !saveData;
 }
 
-
-// -----------------------------
+// =========================
 // 새 게임
-// -----------------------------
+// =========================
 
 newGameBtn.addEventListener("click", function () {
 
-    // 앞으로 저장 데이터가 늘어나도
-    // 여기에서 초기화하면 된다.
+    // 기존 저장 데이터 삭제
     localStorage.removeItem("schoolEscapeSave");
 
+    // 교문 화면으로 이동
     showScreen(gateScreen);
 
 });
 
-
-// -----------------------------
+// =========================
 // 이어하기
-// -----------------------------
+// =========================
 
 continueBtn.addEventListener("click", function () {
 
-    // 아직 저장 기능은 구현하지 않았다.
-    alert("이어하기 기능은 추후 구현됩니다.");
+    alert("이어하기 기능은 다음 단계에서 구현됩니다.");
 
 });
 
-
-// -----------------------------
+// =========================
 // 교문 → 정문 입구
-// -----------------------------
+// =========================
 
 enterSchoolBtn.addEventListener("click", function () {
 
@@ -105,10 +91,9 @@ enterSchoolBtn.addEventListener("click", function () {
 
 });
 
-
-// -----------------------------
+// =========================
 // 정문 입구 → 계단
-// -----------------------------
+// =========================
 
 stairsBtn.addEventListener("click", function () {
 
@@ -116,9 +101,8 @@ stairsBtn.addEventListener("click", function () {
 
 });
 
-
-// -----------------------------
+// =========================
 // 시작
-// -----------------------------
+// =========================
 
-checkSaveData();
+updateContinueButton();
