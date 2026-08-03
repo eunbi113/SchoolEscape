@@ -48,7 +48,7 @@ const screens = [
     computerRoom,
     computerRoomDesk,
     computerRoomTeacher,
-    computerRoomback,
+    computerRoomBack,
     practiceRoom,
     firstFloorHallway,
     auditorium,
@@ -171,6 +171,16 @@ document.getElementById("locker-button");
 
 const backSecondFloorFromClassroomButton =
 document.getElementById("back-second-floor-from-classroom-button");
+
+/* =========================================================
+   1. 새로 추가된 화면 가져오기
+========================================================= */
+
+const computerRoomDesk = document.getElementById("computer-room-desk");
+
+const computerRoomTeacher = document.getElementById("computer-room-teacher");
+
+const computerRoomBack = document.getElementById("computer-room-back");
 
 
 
@@ -308,18 +318,6 @@ lockerButton.addEventListener("click", function(){
    3. computer-room-back → 뒤편
 
    기존에 만든 showScreen() 함수를 그대로 사용합니다.
-========================================================= */
-
-
-/* =========================================================
-   1. 새로 추가된 화면 가져오기
-========================================================= */
-
-const computerRoomDesk = document.getElementById("computer-room-desk");
-
-const computerRoomTeacher = document.getElementById("computer-room-teacher");
-
-const computerRoomBack = document.getElementById("computer-room-back");
 
 
 /* =========================================================
