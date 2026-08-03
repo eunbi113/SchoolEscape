@@ -2,13 +2,19 @@
 /* 심야의 학교 */
 /* ===================================================== */
 
+const inventory = [];
+
+function hasItem(item){
+
+    return inventory.includes(item);
+
+}
 
 /* ----------------------------------------------------- */
 /* 화면 */
 /* ----------------------------------------------------- */
 
 const screens = document.querySelectorAll("section");
-
 
 /* ----------------------------------------------------- */
 /* 화면 전환 */
@@ -608,12 +614,7 @@ function investigate(buttonId,message){
 
 }
 
-
-/* ----------------------------------------------------- */
-/* 아이템 획득 */
-/* ----------------------------------------------------- */
-
-function getItem(buttonId,itemName,message){
+function miniGame(buttonId,callback){
 
     const button=document.getElementById(buttonId);
 
@@ -621,22 +622,59 @@ function getItem(buttonId,itemName,message){
 
     button.addEventListener("click",()=>{
 
-        if(inventory.includes(itemName)){
-
-            alert("이미 획득했습니다.");
-
-            return;
-
-        }
-
-        inventory.push(itemName);
-
-        alert(message);
+        callback();
 
     });
 
 }
 
+
+/* ----------------------------------------------------- */
+/* 아이템 획득 */
+/* ----------------------------------------------------- */
+
+function getItem(itemName,message){
+
+    if(hasItem(itemName)){
+
+        alert("이미 획득했습니다.");
+
+        return;
+
+    }
+
+    inventory.push(itemName);
+
+    alert(message);
+
+}
+
+function computerRoomMathGame(){
+
+    const answer=prompt(
+        "모니터에 문제가 적혀 있다.\n\n11 × 4 = ?"
+    );
+
+    if(answer===null){
+
+        return;
+
+    }
+
+    if(answer.trim() === "44"){
+
+        getItem(
+            "memo1",
+            "메모를 발견했다!\n\n열쇠는 1층에 있다."
+        );
+
+    }else{
+
+        alert("틀렸습니다.");
+
+    }
+
+}
 
 /* ----------------------------------------------------- */
 /* 엔딩 */
@@ -727,16 +765,12 @@ investigate(
     "익숙한 책상이다."
 );
 
+miniGame(
+    "computer-room-teacher-button",
+    computerRoomMathGame
+);
+
 
 /* ----------------------------------------------------- */
 /* 엔딩 아이템 */
 /* ----------------------------------------------------- */
-
-getItem(
-    "classroom-locker-button",
-    "악보를 찾았다!"
-);
-
-ending(
-    "classroom-locker-button"
-);
