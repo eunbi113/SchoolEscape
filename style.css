@@ -245,7 +245,7 @@ section{
 }
 
 
-section button:home-button{
+.home-button{
 
     /* 오른쪽 위 위치 고정 */
     position:absolute;
