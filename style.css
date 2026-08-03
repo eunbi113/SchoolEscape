@@ -29,7 +29,7 @@ body{
     font-family:"Arial", sans-serif;
 
     /* 밤 분위기의 배경 */
-    background:#0d74e3;
+    background:#07192f;
 
     /* 글자색 */
     color:white;
@@ -58,7 +58,7 @@ section{
     padding:35px;
 
     /* 카드 배경 */
-    background:#11284d;
+    background:#4184ea;
 
     /* 둥근 모서리 */
     border-radius:20px;
