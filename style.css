@@ -138,8 +138,6 @@ button{
 
     cursor:pointer;
 
-    min-width:220px;
-
     margin:8px 0;
 
     padding:15px 28px;
@@ -270,6 +268,8 @@ button:active{
     display:flex;
     justify-content:center;
     align-items:center;
+
+    z-index:100;
 
 }
 
@@ -561,6 +561,11 @@ body{
 
 }
 
+button:not(.home-button):not(.left-arrow):not(.right-arrow){
+
+    min-width:220px;
+
+}
 
 /* ===================================================== */
 /* End */
