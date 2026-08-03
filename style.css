@@ -1,0 +1,253 @@
+/* ================================
+   기본 설정
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:"Malgun Gothic", sans-serif;
+    color:white;
+}
+
+/* ================================
+   타이틀 화면
+================================ */
+
+.title-screen{
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #08111f 0%,
+        #10213c 45%,
+        #18263d 100%
+    );
+
+    animation:fadeIn 1.5s ease;
+}
+
+/* ================================
+   밤하늘
+================================ */
+
+.sky{
+    position:absolute;
+    inset:0;
+}
+
+.moon{
+
+    position:absolute;
+
+    top:80px;
+    right:120px;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:#f8f7dc;
+
+    box-shadow:
+        0 0 30px rgba(255,255,220,.4),
+        0 0 60px rgba(255,255,220,.2);
+
+}
+
+/* ================================
+   학교 실루엣
+================================ */
+
+.school{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:38%;
+
+}
+
+.building{
+
+    position:absolute;
+    bottom:0;
+
+    background:#0b0d12;
+
+}
+
+.main-building{
+
+    left:25%;
+    width:50%;
+    height:85%;
+}
+
+.left-building{
+
+    left:10%;
+    width:18%;
+    height:60%;
+}
+
+.right-building{
+
+    right:10%;
+    width:20%;
+    height:65%;
+}
+
+/* ================================
+   내용
+================================ */
+
+.content{
+
+    position:relative;
+    z-index:10;
+
+    text-align:center;
+
+    max-width:700px;
+
+    padding:20px;
+
+}
+
+h1{
+
+    font-size:64px;
+    font-weight:700;
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.15);
+
+}
+
+h1 span{
+
+    display:block;
+
+    margin-top:12px;
+
+    font-size:24px;
+    font-weight:300;
+
+    color:#bfc8d6;
+
+}
+
+.story{
+
+    margin-top:40px;
+
+    line-height:1.8;
+
+    color:#d8dde7;
+
+    font-size:20px;
+
+}
+
+.buttons{
+
+    margin-top:55px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+
+}
+
+button{
+
+    width:180px;
+    height:55px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#1f3558;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s,
+        background .25s;
+
+}
+
+button:hover:not(:disabled){
+
+    transform:scale(1.05);
+
+    background:#305487;
+
+}
+
+button:disabled{
+
+    background:#555;
+
+    color:#999;
+
+    cursor:not-allowed;
+
+}
+
+#message{
+
+    margin-top:30px;
+
+    min-height:24px;
+
+    color:#d7e8ff;
+
+    font-size:16px;
+
+}
+
+/* ================================
+   애니메이션
+================================ */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
