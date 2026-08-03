@@ -300,24 +300,6 @@ lockerButton.addEventListener("click", function(){
 
 });
 
-/* =========================================================
-   컴퓨터실 내부 이동 기능
-========================================================= */
-
-
-/* =========================================================
-   화면 가져오기
-========================================================= */
-
-const computerRoomDesk =
-document.getElementById("computer-room-desk");
-
-const computerRoomTeacher =
-document.getElementById("computer-room-teacher");
-
-const computerRoomBack =
-document.getElementById("computer-room-back");
-
 
 /* =========================================================
    버튼 가져오기
