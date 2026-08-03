@@ -124,7 +124,7 @@ button{
     padding:14px 28px;
 
     /* 버튼 사이 간격 */
-    margin:8px;
+    margin:30px 8px 8px 8px;
 
     /* 글자 크기 */
     font-size:18px;
