@@ -98,7 +98,7 @@ showScreen(title);
 
 
 /* 타이틀 */
-const startButton = title.getElementsByTagName("button")[1];
+const startButton = title.getElementsByTagName("button")[0];
 
 
 /* 교문 */
@@ -190,7 +190,7 @@ classroom.getElementsByTagName("button")[2];
    타이틀 화면으로 이동합니다.
 ========================================================= */
 
-const homeButtons = document.querySelectorAll("section button:first-child");
+const homeButtons = document.querySelectorAll(".home-button");
 
 
 for(let i = 0; i < homeButtons.length; i++){
