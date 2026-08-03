@@ -23,13 +23,13 @@ body{
     margin:0;
 
     /* 안쪽 여백 */
-    padding:40px;
+    padding:20px;
 
     /* 글꼴 */
-    font-family:"맑은 고딕", sans-serif;
+    font-family:"HY 견고딕", sans-serif;
 
     /* 밤 분위기의 배경 */
-    background:#07192f;
+    background:#0d74e3;
 
     /* 글자색 */
     color:white;
@@ -62,7 +62,7 @@ section{
     border-radius:20px;
 
     /* 카드 테두리 */
-    border:1px solid #35527f;
+    border:1px solid #ece6a6;
 
     /* 그림자 */
     box-shadow:0 10px 20px rgba(0,0,0,0.4);
