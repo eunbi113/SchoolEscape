@@ -1,767 +1,741 @@
-/*
-==========================================================
-심야의 학교
-script.js
-Part 1 / 5
-==========================================================
-*/
+/* ===================================================== */
+/* 심야의 학교 */
+/* ===================================================== */
 
 
-/* ==========================================================
-   화면 가져오기
-========================================================== */
+/* ----------------------------------------------------- */
+/* 화면 */
+/* ----------------------------------------------------- */
 
-const title = document.getElementById("title");
-
-const schoolGate =
-document.getElementById("school-gate");
-
-const mainEntrance =
-document.getElementById("main-entrance");
-
-const stairs =
-document.getElementById("stairs");
-
-const basementHallway =
-document.getElementById("basement-hallway");
-
-const smallAuditoriumStage =
-document.getElementById("small-auditorium-stage");
-
-const computerRoomDesk =
-document.getElementById("computer-room-desk");
-
-const computerRoomTeacher =
-document.getElementById("computer-room-teacher");
-
-const computerRoomBack =
-document.getElementById("computer-room-back");
-
-const practiceRoomBoard =
-document.getElementById("practice-room-board");
-
-const practiceRoomMirror =
-document.getElementById("practice-room-mirror");
-
-const practiceRoomDrum =
-document.getElementById("practice-room-drum");
-
-const firstFloorHallway =
-document.getElementById("first-floor-hallway");
-
-const auditoriumSeat =
-document.getElementById("auditorium-seat");
-
-const auditoriumStage =
-document.getElementById("auditorium-stage");
-
-const auditoriumAircon =
-document.getElementById("auditorium-aircon");
-
-const restroomSink =
-document.getElementById("restroom-sink");
-
-const restroomToilet =
-document.getElementById("restroom-toilet");
-
-const outdoorStageSeat =
-document.getElementById("outdoor-stage-seat");
-
-const outdoorStageStage =
-document.getElementById("outdoor-stage-stage");
-
-const outdoorStageStair =
-document.getElementById("outdoor-stage-stair");
-
-const secondFloorHallway =
-document.getElementById("second-floor-hallway");
-
-const classroomBoard =
-document.getElementById("classroom-board");
-
-const classroomDesk =
-document.getElementById("classroom-desk");
-
-const classroomLocker =
-document.getElementById("classroom-locker");
-
-const ending =
-document.getElementById("ending");
+const screens = document.querySelectorAll("section");
 
 
-/* ==========================================================
-   모든 화면
-========================================================== */
+/* ----------------------------------------------------- */
+/* 화면 전환 */
+/* ----------------------------------------------------- */
 
-const screens = [
+function show(screenId){
 
-    title,
+    screens.forEach(screen=>{
 
-    schoolGate,
-    mainEntrance,
-    stairs,
-
-    basementHallway,
-
-    smallAuditoriumStage,
-
-    computerRoomDesk,
-    computerRoomTeacher,
-    computerRoomBack,
-
-    practiceRoomBoard,
-    practiceRoomMirror,
-    practiceRoomDrum,
-
-    firstFloorHallway,
-
-    auditoriumSeat,
-    auditoriumStage,
-    auditoriumAircon,
-
-    restroomSink,
-    restroomToilet,
-
-    outdoorStageSeat,
-    outdoorStageStage,
-    outdoorStageStair,
-
-    secondFloorHallway,
-
-    classroomBoard,
-    classroomDesk,
-    classroomLocker,
-
-    ending
-
-];
-
-
-/* ==========================================================
-   화면 전환
-========================================================== */
-
-function showScreen(screen){
-
-    screens.forEach(function(section){
-
-        section.style.display = "none";
+        screen.style.display="none";
 
     });
 
-    screen.style.display = "block";
-
-}
-
-showScreen(title);
-
-
-/* ==========================================================
-   버튼 연결 함수
-========================================================== */
-
-function connect(buttonId, nextScreen){
-
-    const button =
-    document.getElementById(buttonId);
-
-    if(button){
-
-        button.addEventListener("click", function(){
-
-            showScreen(nextScreen);
-
-        });
-
-    }
+    document.getElementById(screenId).style.display="flex";
 
 }
 
 
-/* ==========================================================
-   타이틀
-========================================================== */
+/* ----------------------------------------------------- */
+/* 이동 연결 */
+/* ----------------------------------------------------- */
+
+function connect(buttonId,nextScreen){
+
+    const button=document.getElementById(buttonId);
+
+    if(!button) return;
+
+    button.addEventListener("click",()=>{
+
+        show(nextScreen);
+
+    });
+
+}
+
+
+/* ----------------------------------------------------- */
+/* 홈 버튼 */
+/* ----------------------------------------------------- */
+
+function home(buttonId){
+
+    const button=document.getElementById(buttonId);
+
+    if(!button) return;
+
+    button.addEventListener("click",()=>{
+
+        show("title");
+
+    });
+
+}
+
+
+/* ----------------------------------------------------- */
+/* 시작 */
+/* ----------------------------------------------------- */
 
 connect(
     "start-button",
-    schoolGate
+    "school-gate"
+);
+
+connect(
+    "continue-button",
+    "school-gate"
 );
 
 
-/* ==========================================================
-   교문
-========================================================== */
+/* ----------------------------------------------------- */
+/* 교문 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-school-gate"
+);
 
 connect(
     "enter-school-button",
-    mainEntrance
+    "main-entrance"
 );
 
 
-/* ==========================================================
-   정문
-========================================================== */
+/* ----------------------------------------------------- */
+/* 정문 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-main-entrance"
+);
 
 connect(
     "move-stairs-button",
-    stairs
+    "stairs"
 );
 
 
-/* ==========================================================
-   계단
-========================================================== */
+/* ----------------------------------------------------- */
+/* 계단 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-stairs"
+);
 
 connect(
     "go-basement-button",
-    basementHallway
+    "basement-hallway"
 );
 
 connect(
     "go-first-floor-button",
-    firstFloorHallway
+    "first-floor-hallway"
 );
 
 connect(
     "go-second-floor-button",
-    secondFloorHallway
+    "second-floor-hallway"
 );
 
 
-/* ==========================================================
-   지하 복도
-========================================================== */
+/* ----------------------------------------------------- */
+/* 지하 복도 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-basement-hallway"
+);
 
 connect(
     "go-small-auditorium-button",
-    smallAuditoriumStage
+    "small-auditorium-stage"
 );
 
 connect(
     "go-computer-room-button",
-    computerRoomDesk
+    "computer-room-desk"
 );
 
 connect(
     "go-practice-room-button",
-    practiceRoomBoard
+    "practice-room-board"
 );
 
 connect(
     "basement-hallway-back-basement-button",
-    stairs
-);
-
-/* ==========================================================
-   중강당
-========================================================== */
-
-connect(
-    "small-auditorium-stage-back-basement-button",
-    basementHallway
+    "stairs"
 );
 
 
-/* ==========================================================
-   컴퓨터실 - 기본
-========================================================== */
+/* ----------------------------------------------------- */
+/* 1층 복도 */
+/* ----------------------------------------------------- */
 
-connect(
-    "computer-room-desk-to-teacher-button",
-    computerRoomTeacher
+home(
+    "home-first-floor-hallway"
 );
-
-connect(
-    "computer-room-desk-to-back-button",
-    computerRoomBack
-);
-
-connect(
-    "computer-room-desk-back-basement-button",
-    basementHallway
-);
-
-
-/* ==========================================================
-   컴퓨터실 - 교탁
-========================================================== */
-
-connect(
-    "computer-room-teacher-to-desk-button",
-    computerRoomDesk
-);
-
-connect(
-    "computer-room-teacher-back-basement-button",
-    basementHallway
-);
-
-
-/* ==========================================================
-   컴퓨터실 - 뒤편
-========================================================== */
-
-connect(
-    "computer-room-back-to-desk-button",
-    computerRoomDesk
-);
-
-connect(
-    "computer-room-back-back-basement-button",
-    basementHallway
-);
-
-
-/* ==========================================================
-   연습실 - 칠판
-========================================================== */
-
-connect(
-    "practice-room-board-to-mirror-button",
-    practiceRoomMirror
-);
-
-connect(
-    "practice-room-board-to-drum-button",
-    practiceRoomDrum
-);
-
-connect(
-    "practice-room-board-back-basement-button",
-    basementHallway
-);
-
-
-/* ==========================================================
-   연습실 - 거울
-========================================================== */
-
-connect(
-    "practice-room-mirror-to-board-button",
-    practiceRoomBoard
-);
-
-connect(
-    "practice-room-mirror-back-basement-button",
-    basementHallway
-);
-
-
-/* ==========================================================
-   연습실 - 장구
-========================================================== */
-
-connect(
-    "practice-room-drum-to-board-button",
-    practiceRoomBoard
-);
-
-connect(
-    "practice-room-drum-back-basement-button",
-    basementHallway
-);
-
-/* ==========================================================
-   1층 복도
-========================================================== */
 
 connect(
     "go-auditorium-button",
-    auditoriumSeat
+    "auditorium-seat"
 );
 
 connect(
     "go-restroom-button",
-    restroomSink
+    "restroom-sink"
 );
 
 connect(
     "go-outdoor-stage-button",
-    outdoorStageSeat
+    "outdoor-stage-seat"
 );
 
 connect(
-    "first-floor-hallway-back-stairs-button",
-    stairs
+    "first-floor-hallway-back-basement-button",
+    "stairs"
 );
 
 
-/* ==========================================================
-   강당 - 객석
-========================================================== */
+/* ----------------------------------------------------- */
+/* 2층 복도 */
+/* ----------------------------------------------------- */
 
-connect(
-    "auditorium-seat-to-aircon-button",
-    auditoriumAircon
+home(
+    "home-second-floor-hallway"
 );
-
-connect(
-    "auditorium-seat-to-stage-button",
-    auditoriumStage
-);
-
-connect(
-    "auditorium-seat-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   강당 - 무대
-========================================================== */
-
-connect(
-    "auditorium-stage-to-seat-button",
-    auditoriumSeat
-);
-
-connect(
-    "auditorium-stage-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   강당 - 에어컨
-========================================================== */
-
-connect(
-    "auditorium-aircon-to-seat-button",
-    auditoriumSeat
-);
-
-connect(
-    "auditorium-aircon-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   화장실 - 세면대
-========================================================== */
-
-connect(
-    "restroom-sink-to-toilet-button",
-    restroomToilet
-);
-
-connect(
-    "restroom-sink-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   화장실 - 변기칸
-========================================================== */
-
-connect(
-    "restroom-toilet-to-sink-button",
-    restroomSink
-);
-
-connect(
-    "restroom-toilet-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   야외공연장 - 객석
-========================================================== */
-
-connect(
-    "outdoor-stage-seat-to-stage-button",
-    outdoorStageStage
-);
-
-connect(
-    "outdoor-stage-seat-to-stair-button",
-    outdoorStageStair
-);
-
-connect(
-    "outdoor-stage-seat-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   야외공연장 - 무대
-========================================================== */
-
-connect(
-    "outdoor-stage-stage-to-seat-button",
-    outdoorStageSeat
-);
-
-connect(
-    "outdoor-stage-stage-back-first-floor-button",
-    firstFloorHallway
-);
-
-
-/* ==========================================================
-   야외공연장 - 계단
-========================================================== */
-
-connect(
-    "outdoor-stage-stair-to-seat-button",
-    outdoorStageSeat
-);
-
-connect(
-    "outdoor-stage-stair-back-first-floor-button",
-    firstFloorHallway
-);
-
-/* ==========================================================
-   2층 복도
-========================================================== */
 
 connect(
     "go-classroom-button",
-    classroomBoard
+    "classroom-board"
 );
 
 connect(
     "second-floor-hallway-back-stairs-button",
-    stairs
+    "stairs"
+);
+
+/* ----------------------------------------------------- */
+/* 중강당 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-small-auditorium-stage"
+);
+
+connect(
+    "small-auditorium-stage-back-basement-button",
+    "basement-hallway"
 );
 
 
-/* ==========================================================
-   교실 - 칠판
-========================================================== */
+/* ----------------------------------------------------- */
+/* 컴퓨터실 - 책상 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-computer-room-desk"
+);
+
+connect(
+    "computer-room-desk-to-teacher-button",
+    "computer-room-teacher"
+);
+
+connect(
+    "computer-room-desk-to-back-button",
+    "computer-room-back"
+);
+
+connect(
+    "computer-room-desk-back-basement-button",
+    "basement-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 컴퓨터실 - 교탁 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-computer-room-teacher"
+);
+
+connect(
+    "computer-room-teacher-to-desk-button",
+    "computer-room-desk"
+);
+
+connect(
+    "computer-room-teacher-back-basement-button",
+    "basement-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 컴퓨터실 - 뒤편 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-computer-room-back"
+);
+
+connect(
+    "computer-room-back-to-desk-button",
+    "computer-room-desk"
+);
+
+connect(
+    "computer-room-back-back-basement-button",
+    "basement-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 연습실 - 칠판 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-practice-room-board"
+);
+
+connect(
+    "practice-room-board-to-mirror-button",
+    "practice-room-mirror"
+);
+
+connect(
+    "practice-room-board-to-drum-button",
+    "practice-room-drum"
+);
+
+connect(
+    "practice-room-board-back-basement-button",
+    "basement-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 연습실 - 거울 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-practice-room-mirror"
+);
+
+connect(
+    "practice-room-mirror-to-board-button",
+    "practice-room-board"
+);
+
+connect(
+    "practice-room-mirror-back-basement-button",
+    "basement-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 연습실 - 장구 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-practice-room-drum"
+);
+
+connect(
+    "practice-room-drum-to-board-button",
+    "practice-room-board"
+);
+
+connect(
+    "practice-room-drum-back-basement-button",
+    "basement-hallway"
+);
+
+/* ----------------------------------------------------- */
+/* 강당 - 객석 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-auditorium-seat"
+);
+
+connect(
+    "auditorium-seat-to-stage-button",
+    "auditorium-stage"
+);
+
+connect(
+    "auditorium-seat-to-aircon-button",
+    "auditorium-aircon"
+);
+
+connect(
+    "auditorium-seat-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 강당 - 무대 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-auditorium-stage"
+);
+
+connect(
+    "auditorium-stage-to-seat-button",
+    "auditorium-seat"
+);
+
+connect(
+    "auditorium-stage-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 강당 - 에어컨 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-auditorium-aircon"
+);
+
+connect(
+    "auditorium-aircon-to-seat-button",
+    "auditorium-seat"
+);
+
+connect(
+    "auditorium-aircon-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 화장실 - 세면대 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-restroom-sink"
+);
+
+connect(
+    "restroom-sink-to-toilet-button",
+    "restroom-toilet"
+);
+
+connect(
+    "restroom-sink-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 화장실 - 변기칸 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-restroom-toilet"
+);
+
+connect(
+    "restroom-toilet-to-sink-button",
+    "restroom-sink"
+);
+
+connect(
+    "restroom-toilet-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 야외공연장 - 객석 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-outdoor-stage-seat"
+);
+
+connect(
+    "outdoor-stage-seat-to-stage-button",
+    "outdoor-stage-stage"
+);
+
+connect(
+    "outdoor-stage-seat-to-stair-button",
+    "outdoor-stage-stair"
+);
+
+connect(
+    "outdoor-stage-seat-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 야외공연장 - 무대 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-outdoor-stage-stage"
+);
+
+connect(
+    "outdoor-stage-to-seat-button",
+    "outdoor-stage-seat"
+);
+
+connect(
+    "outdoor-stage-stage-back-basement-button",
+    "first-floor-hallway"
+);
+
+
+/* ----------------------------------------------------- */
+/* 야외공연장 - 계단 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-outdoor-stage-stair"
+);
+
+connect(
+    "outdoor-stage-stair-to-seat-button",
+    "outdoor-stage-seat"
+);
+
+connect(
+    "outdoor-stage-stair-back-basement-button",
+    "first-floor-hallway"
+);
+
+/* ----------------------------------------------------- */
+/* 교실 - 칠판 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-classroom-board"
+);
 
 connect(
     "classroom-board-to-desk-button",
-    classroomDesk
+    "classroom-desk"
 );
 
 connect(
     "classroom-board-back-second-floor-button",
-    secondFloorHallway
+    "second-floor-hallway"
 );
 
 
-/* ==========================================================
-   교실 - 책상
-========================================================== */
+/* ----------------------------------------------------- */
+/* 교실 - 책상 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-classroom-desk"
+);
 
 connect(
     "classroom-desk-to-board-button",
-    classroomBoard
+    "classroom-board"
 );
 
 connect(
     "classroom-desk-to-locker-button",
-    classroomLocker
+    "classroom-locker"
 );
 
 connect(
     "classroom-desk-back-second-floor-button",
-    secondFloorHallway
+    "second-floor-hallway"
 );
 
 
-/* ==========================================================
-   교실 - 사물함
-========================================================== */
+/* ----------------------------------------------------- */
+/* 교실 - 사물함 */
+/* ----------------------------------------------------- */
+
+home(
+    "home-classroom-locker"
+);
 
 connect(
     "classroom-locker-to-desk-button",
-    classroomDesk
+    "classroom-desk"
 );
 
 connect(
     "classroom-locker-back-second-floor-button",
-    secondFloorHallway
+    "second-floor-hallway"
 );
 
 
-/* ==========================================================
-   사물함 조사
-========================================================== */
+/* ----------------------------------------------------- */
+/* 엔딩 */
+/* ----------------------------------------------------- */
 
-const lockerButton =
-document.getElementById("classroom-locker-investigate-button");
-
-if(lockerButton){
-
-    lockerButton.addEventListener("click", function(){
-
-        showScreen(ending);
-
-    });
-
-}
-
-
-/* ==========================================================
-   엔딩
-========================================================== */
+home(
+    "home-ending"
+);
 
 connect(
     "restart-button",
-    title
+    "title"
 );
 
-/* ==========================================================
-   🏠 홈 버튼
-========================================================== */
 
-const homeButtons =
-document.querySelectorAll(".home-button");
+/* ----------------------------------------------------- */
+/* 아이템 */
+/* ----------------------------------------------------- */
 
-homeButtons.forEach(function(button){
-
-    button.addEventListener("click", function(){
-
-        showScreen(title);
-
-    });
-
-});
+const inventory=[];
 
 
-/* ==========================================================
-   이어하기
-   (추후 저장 기능 추가 예정)
-========================================================== */
+/* ----------------------------------------------------- */
+/* 조사 */
+/* ----------------------------------------------------- */
 
-const continueButton =
-document.getElementById("continue-button");
+function investigate(buttonId,message){
 
-if(continueButton){
+    const button=document.getElementById(buttonId);
 
-    continueButton.addEventListener("click", function(){
+    if(!button) return;
 
-        alert("이어하기 기능은 추후 추가됩니다.");
+    button.addEventListener("click",()=>{
+
+        alert(message);
 
     });
 
 }
 
 
-/* ==========================================================
-   조사 함수
-========================================================== */
+/* ----------------------------------------------------- */
+/* 아이템 획득 */
+/* ----------------------------------------------------- */
 
-function investigate(buttonId, message){
+function getItem(buttonId,itemName,message){
 
-    const button =
-    document.getElementById(buttonId);
+    const button=document.getElementById(buttonId);
 
-    if(button){
+    if(!button) return;
 
-        button.addEventListener("click", function(){
+    button.addEventListener("click",()=>{
 
-            alert(message);
+        if(inventory.includes(itemName)){
 
-        });
+            alert("이미 획득했습니다.");
 
-    }
+            return;
 
-}
+        }
 
+        inventory.push(itemName);
 
-/* ==========================================================
-   아이템 획득 함수
-========================================================== */
+        alert(message);
 
-const inventory = [];
-
-function getItem(buttonId, itemName, message){
-
-    const button =
-    document.getElementById(buttonId);
-
-    if(button){
-
-        button.addEventListener("click", function(){
-
-            if(inventory.includes(itemName)){
-
-                alert("이미 획득한 아이템입니다.");
-
-                return;
-
-            }
-
-            inventory.push(itemName);
-
-            alert(message);
-
-        });
-
-    }
+    });
 
 }
 
 
-/* ==========================================================
-   아이템 확인 함수
-========================================================== */
+/* ----------------------------------------------------- */
+/* 엔딩 */
+/* ----------------------------------------------------- */
 
-function hasItem(itemName){
+function ending(buttonId){
 
-    return inventory.includes(itemName);
+    const button=document.getElementById(buttonId);
+
+    if(!button) return;
+
+    button.addEventListener("click",()=>{
+
+        show("ending");
+
+    });
 
 }
 
 
-/* ==========================================================
-   조사 등록
-   (5차시부터 하나씩 추가)
-========================================================== */
-
-/*
-
-예시)
+/* ----------------------------------------------------- */
+/* 기본 조사 */
+/* ----------------------------------------------------- */
 
 investigate(
-    "computer-room-monitor-investigate-button",
-    "모니터가 켜져 있다."
+    "small-auditorium-stage-button",
+    "이곳에는 아무것도 없어 보인다."
 );
 
 investigate(
-    "practice-room-board-investigate-button",
-    "칠판에 악보 일부가 적혀 있다."
+    "computer-room-desk-button",
+    "이 시간에 이상하게 모니터가 켜져있다."
 );
 
-*/
+investigate(
+    "computer-room-back-button",
+    "꽤나 큰 거울이 벽에 걸려 있다."
+);
+
+investigate(
+    "practice-room-mirror-button",
+    "한쪽 벽을 꽉 채운 거울이 있다."
+);
+
+investigate(
+    "practice-room-drum-button",
+    "악기 소리가 좋다."
+);
+
+investigate(
+    "auditorium-seat-button",
+    "객석은 텅 비어 있다."
+
+);
+
+investigate(
+    "auditorium-aircon-button",
+    "이상하게 냉기가 느껴진다."
+);
+
+investigate(
+    "restroom-sink-mirror-button",
+    "거울 속에 내 모습이 비친다."
+);
+
+investigate(
+    "restroom-toilet-button",
+    "화장실이 꽤나 깨끗하다"
+);
+
+investigate(
+    "outdoor-stage-seat-button",
+    "이곳에는 뭐가 있을까"
+);
+
+investigate(
+    "outdoor-stage-stair-button",
+    "무대가 한 눈에 보인다."
+);
+
+investigate(
+    "classroom-board-button",
+    "시험 일정이 적혀 있다."
+);
+
+investigate(
+    "classroom-desk-button",
+    "익숙한 책상이다."
+);
 
 
-/* ==========================================================
-   아이템 등록
-   (6차시부터 하나씩 추가)
-========================================================== */
-
-/*
-
-예시)
+/* ----------------------------------------------------- */
+/* 엔딩 아이템 */
+/* ----------------------------------------------------- */
 
 getItem(
-    "locker-investigate-button",
-    "악보",
-    "악보를 획득했다!"
+    "classroom-locker-button",
+    "악보를 찾았다!"
 );
 
-*/
-
-
-/* ==========================================================
-   엔딩 조건
-   (추후 수정)
-========================================================== */
-
-/*
-
-if(hasItem("악보")){
-
-    showScreen(ending);
-
-}
-
-*/
+ending(
+    "classroom-locker-button"
+);
