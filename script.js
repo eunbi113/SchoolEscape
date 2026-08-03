@@ -739,6 +739,63 @@ function restroomPuzzleGame(){
 
 }
 
+function practiceRoomHint(){
+
+    alert(
+        "칠판에 글씨가 적혀 있다.\n\n" +
+        "\"첫 번째 숫자는\n" +
+        "무용과의 반 번호이다.\""
+    );
+
+}
+
+function outdoorStageHint(){
+
+    alert(
+        "무대 바닥에 메모가 떨어져 있다.\n\n" +
+        "\"세 번째와 네 번째 숫자는\n" +
+        "우리 학교의 전공 개수이다.\""
+    );
+
+}
+
+function classroomPasswordGame(){
+
+    if(!hasItem("key")){
+
+        alert("사물함이 잠겨 있다.\n\n열쇠가 필요하다.");
+
+        return;
+
+    }
+
+    const answer = prompt(
+        "사물함 비밀번호를 입력하세요."
+    );
+
+    if(answer === null){
+
+        return;
+
+    }
+
+    if(answer.trim() === "21216"){
+
+        getItem(
+            "score",
+            "악보를 획득했다!"
+        );
+
+        show("ending");
+
+    }else{
+
+        alert("비밀번호가 틀렸습니다.");
+
+    }
+
+}
+
 /* ----------------------------------------------------- */
 /* 엔딩 */
 /* ----------------------------------------------------- */
@@ -841,6 +898,21 @@ miniGame(
 miniGame(
     "restroom-sink-mirror-button",
     restroomPuzzleGame
+);
+
+miniGame(
+    "practice-room-board-button",
+    practiceRoomHint
+);
+
+miniGame(
+    "outdoor-stage-stage-button",
+    outdoorStageHint
+);
+
+miniGame(
+    "classroom-locker-button",
+    classroomPasswordGame
 );
 
 /* ----------------------------------------------------- */
