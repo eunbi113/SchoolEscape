@@ -77,6 +77,8 @@ section{
 
     /* 크기 계산 */
     box-sizing:border-box;
+
+    position:relative;
 }
 
 
@@ -245,16 +247,28 @@ section{
 
 section button:home-button{
 
-    /* 오른쪽 위 위치 */
+    /* 오른쪽 위 위치 고정 */
     position:absolute;
 
+    /* 위쪽 위치 */
     top:30px;
+
+    /* 오른쪽 위치 */
     right:30px;
 
-    /* 처음으로 버튼 크기 */
+    /* 버튼 크기 */
     width:60px;
     height:30px;
 
     /* 글자 크기 */
     font-size:24px;
+
+    /* 기존 버튼 스타일 유지 */
+    padding:0;
+
+    /* 가운데 정렬 */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
 }
