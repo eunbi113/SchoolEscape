@@ -129,11 +129,8 @@ p{
     /* 최대 너비 */
     max-width:700px;
 
-    /* 바깥 여백(위 오른쪽 아래 왼쪽) */
-    margin:0 auto 120px auto;
-
     /* 안쪽 여백(위 오른쪽 아래 왼쪽) */
-    padding:30px 40px 30px 40px;
+    padding:10px 0px 10px 0px;
 
     /* 모서리 둥글게 */
     border-radius:15px;
