@@ -824,7 +824,7 @@ function auditoriumMemoryGame(){
 
         text.style.display="none";
 
-        inputArea.style.display="block";
+        inputArea.style.display="flex";
 
         input.focus();
 
