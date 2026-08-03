@@ -707,6 +707,38 @@ function auditoriumMemoryGame(){
 
 }
 
+function restroomPuzzleGame(){
+
+    const answer = prompt(
+        "거울에 글자가 나타났다.\n\n" +
+        "학교가 이전한 순서대로 숫자를 입력하시오.\n\n" +
+        "① 금천구 시흥동\n" +
+        "② 종로구 관훈동\n" +
+        "③ 성북구 석관동\n" +
+        "④ 종로구 운니동"
+    );
+
+    if(answer === null){
+
+        return;
+
+    }
+
+    if(answer.trim() === "2431"){
+
+        getItem(
+            "key",
+            "거울 뒤에서 열쇠를 발견했다!"
+        );
+
+    }else{
+
+        alert("틀렸습니다.");
+
+    }
+
+}
+
 /* ----------------------------------------------------- */
 /* 엔딩 */
 /* ----------------------------------------------------- */
@@ -804,6 +836,11 @@ miniGame(
 miniGame(
     "auditorium-curtain-button",
     auditoriumMemoryGame
+);
+
+miniGame(
+    "restroom-sink-mirror-button",
+    restroomPuzzleGame
 );
 
 /* ----------------------------------------------------- */
