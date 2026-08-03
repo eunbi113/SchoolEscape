@@ -810,23 +810,25 @@ function auditoriumMemoryGame(){
 
     text.textContent = number;
 
-    screen.style.display = "flex";
+screen.style.display = "flex";
+
+setTimeout(()=>{
+
+    screen.style.display = "none";
 
     setTimeout(()=>{
-
-        screen.style.display = "none";
 
         const answer = prompt(
             "방금 본 숫자를 입력하세요."
         );
 
-        if(answer === null){
+        if(answer===null){
 
             return;
 
         }
 
-        if(answer.trim() === number){
+        if(answer.trim()===number){
 
             getItem(
                 "memo2",
@@ -839,9 +841,9 @@ function auditoriumMemoryGame(){
 
         }
 
-    },3000);
+    },100);
 
-}
+},3000);
 
 function restroomPuzzleGame(){
 
