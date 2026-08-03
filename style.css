@@ -9,132 +9,117 @@
 }
 
 body {
-
     font-family: "Malgun Gothic", sans-serif;
-
     background: #0f172a;
     color: white;
-
-    height: 100vh;
 }
-
 
 /* =========================
    화면 공통
 ========================= */
 
 .screen {
-
     width: 100%;
     height: 100vh;
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
     text-align: center;
-
     padding: 30px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #081120,
-            #16233d,
-            #243b55
-        );
+    background: linear-gradient(
+        to bottom,
+        #081120,
+        #16233d,
+        #243b55
+    );
 }
 
 /* 화면 숨기기 */
 
-.hidden{
-    display:none;
+.hidden {
+    display: none;
 }
-
 
 /* =========================
    제목
 ========================= */
 
-h1{
-
-    font-size:56px;
-    margin-bottom:20px;
+h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
 }
 
-h2{
-
-    font-size:42px;
-    margin-bottom:30px;
+h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
 }
 
-.subtitle{
-
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:40px;
+.subtitle {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 40px;
 }
-
 
 /* =========================
    버튼
 ========================= */
 
-.button-group{
-
-    display:flex;
-    gap:20px;
+.button-group {
+    display: flex;
+    gap: 20px;
 }
 
-button{
+button {
+    padding: 15px 35px;
 
-    padding:15px 35px;
+    font-size: 18px;
 
-    font-size:18px;
+    border: none;
+    border-radius: 8px;
 
-    border:none;
-    border-radius:8px;
+    background: white;
+    color: #1f2937;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    background:white;
-    color:#1f2937;
-
-    transition:.2s;
+    transition: 0.2s;
 }
 
-button:hover{
-
-    transform:scale(1.05);
+button:hover:not(:disabled) {
+    transform: scale(1.05);
 }
 
-button:disabled{
-
-    background:#666;
-    color:#bbb;
-    cursor:not-allowed;
-
-    transform:none;
+button:disabled {
+    background: #666;
+    color: #bbb;
+    cursor: not-allowed;
 }
-
 
 /* =========================
    스토리 박스
 ========================= */
 
-.story-box{
+.story-box {
+    max-width: 700px;
 
-    max-width:700px;
+    padding: 25px;
+    margin-bottom: 35px;
 
-    padding:25px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255,255,255,0.3);
 
-    margin-bottom:35px;
+    line-height: 1.8;
+}
 
-    border:1px solid rgba(255,255,255,.3);
+/* =========================
+   일반 문단
+========================= */
 
-    background:rgba(0,0,0,.25);
-
-    line-height:1.8;
+p {
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
