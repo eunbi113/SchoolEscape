@@ -90,7 +90,7 @@ h1{
     font-size:150px;
 
     /* 아래 여백 */
-    margin-bottom:40px;
+    margin:100px auto 40px auto;
 }
 
 
@@ -121,7 +121,13 @@ p{
     line-height:2;
 
     /* 여백 */
-    margin:100px auto 80px auto;
+    margin:110px auto 80px auto;
+
+    /* 테두리 */
+    border:2px solid white;
+
+    /* 모서리 둥글게 */
+    border-radius:15px;
 }
 
 
