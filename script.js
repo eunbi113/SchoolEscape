@@ -25,6 +25,40 @@ function saveGame(){
 
 }
 
+function loadGame(){
+
+    const savedInventory=localStorage.getItem("inventory");
+
+    if(savedInventory){
+
+        inventory.push(...JSON.parse(savedInventory));
+
+    }
+
+    updateInventory();
+
+    const savedScreen=localStorage.getItem("screen");
+
+    if(savedScreen){
+
+        show(savedScreen);
+
+    }
+
+}
+
+function newGame(){
+
+    localStorage.removeItem("inventory");
+
+    localStorage.removeItem("screen");
+
+    inventory.length=0;
+
+    show("start");
+
+}
+
 /* ----------------------------------------------------- */
 /* 화면 */
 /* ----------------------------------------------------- */
@@ -44,6 +78,8 @@ function show(screenId){
     });
 
     document.getElementById(screenId).style.display="flex";
+
+    localStorage.setItem("screen",screenId);
 
 }
 
@@ -1044,6 +1080,8 @@ miniGame(
     "classroom-locker-button",
     classroomPasswordGame
 );
+
+loadGame();
 
 /* ----------------------------------------------------- */
 /* 엔딩 아이템 */
