@@ -126,10 +126,15 @@ function home(buttonId){
 /* 시작 */
 /* ----------------------------------------------------- */
 
-connect(
-    "start-button",
-    "school-gate"
-);
+const startButton = document.getElementById("start-button");
+
+startButton.addEventListener("click", () => {
+
+    newGame();
+
+    show("school-gate");
+
+});
 
 const continueButton = document.getElementById("continue-button");
 
@@ -138,8 +143,6 @@ continueButton.addEventListener("click", () => {
     loadGame();
 
 });
-);
-
 
 /* ----------------------------------------------------- */
 /* 교문 */
