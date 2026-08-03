@@ -696,7 +696,7 @@ function auditoriumMemoryGame(){
 
         getItem(
             "memo2",
-            "메모를 발견했다!\n\n\비밀번호는 총 4자리이다.\"
+            "메모를 발견했다!\n\n\비밀번호는 총 4자리이다."
         );
 
     }else{
