@@ -82,7 +82,6 @@ section{
 
     /* 첫 화면은 조금 더 크게 */
     padding:60px 35px;
-    margin:20px 8px 8px 8px;
 }
 
 
@@ -93,7 +92,7 @@ h1{
 
     font-size:48px;
 
-    margin-bottom:20px;
+    margin:20px 8px 10px 8px;
 }
 
 
