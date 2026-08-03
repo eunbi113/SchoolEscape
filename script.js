@@ -803,32 +803,38 @@ function computerRoomMathGame(){
 
 function auditoriumMemoryGame(){
 
-    const number = "19600513";
+    const number="19600513";
 
-    const screen = document.getElementById("memory-screen");
-    const text = document.getElementById("memory-number");
+    const screen=document.getElementById("memory-screen");
+    const text=document.getElementById("memory-number");
+    const inputArea=document.getElementById("memory-input-area");
+    const input=document.getElementById("memory-answer");
+    const button=document.getElementById("memory-submit");
 
-    text.textContent = number;
+    input.value="";
 
-screen.style.display = "flex";
+    text.textContent=number;
 
-setTimeout(()=>{
+    text.style.display="block";
+    inputArea.style.display="none";
 
-    screen.style.display = "none";
+    screen.style.display="flex";
 
     setTimeout(()=>{
 
-        const answer = prompt(
-            "방금 본 숫자를 입력하세요."
-        );
+        text.style.display="none";
 
-        if(answer===null){
+        inputArea.style.display="block";
 
-            return;
+        input.focus();
 
-        }
+    },2000);
 
-        if(answer.trim()===number){
+    button.onclick=function(){
+
+        if(input.value.trim()===number){
+
+            screen.style.display="none";
 
             getItem(
                 "memo2",
@@ -839,11 +845,15 @@ setTimeout(()=>{
 
             alert("틀렸습니다.");
 
+            input.value="";
+
+            input.focus();
+
         }
 
-    },100);
+    };
 
-},3000);
+}
 
 function restroomPuzzleGame(){
 
