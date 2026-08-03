@@ -20,7 +20,6 @@ const stairs = document.getElementById("stairs");
 
 const basementHallway = document.getElementById("basement-hallway");
 const smallAuditorium = document.getElementById("small-auditorium");
-const computerRoom = document.getElementById("computer-room");
 const computerRoomDesk = document.getElementById("computer-room-desk");
 const computerRoomTeacher = document.getElementById("computer-room-teacher");
 const computerRoomBack = document.getElementById("computer-room-back");
@@ -220,7 +219,7 @@ goSmallAuditoriumButton.addEventListener("click", function(){
 });
 
 goComputerRoomButton.addEventListener("click", function(){
-    showScreen(computerRoom);
+    showScreen(computerRoomDesk);
 });
 
 goPracticeRoomButton.addEventListener("click", function(){
