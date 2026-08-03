@@ -24,6 +24,7 @@ const titleScreen = document.getElementById("titleScreen");
 const gateScreen = document.getElementById("gateScreen");
 const entranceScreen = document.getElementById("entranceScreen");
 const stairsScreen = document.getElementById("stairsScreen");
+const basementHallScreen = document.getElementById("basementHallScreen");
 
 // =========================
 // 버튼 요소
@@ -49,8 +50,8 @@ function showScreen(screen) {
     gateScreen.classList.add("hidden");
     entranceScreen.classList.add("hidden");
     stairsScreen.classList.add("hidden");
-
     screen.classList.remove("hidden");
+    basementHallScreen.classList.add("hidden");
 }
 
 // =========================
@@ -113,7 +114,7 @@ stairsBtn.addEventListener("click", function () {
 
 basementBtn.addEventListener("click", function () {
 
-    alert("다음 단계에서 구현됩니다.");
+    showScreen(basementHallScreen);
 
 });
 
