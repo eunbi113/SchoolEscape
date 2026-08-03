@@ -69,13 +69,15 @@ const screens = [
 
 function showScreen(screen){
 
-    // 모든 화면 숨기기
     for(let i = 0; i < screens.length; i++){
+
+        console.log(i, screens[i]);
+
         screens[i].style.display = "none";
     }
 
-    // 선택한 화면 표시
     screen.style.display = "block";
+}
 }
 
 
