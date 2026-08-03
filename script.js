@@ -759,6 +759,16 @@ function outdoorStageHint(){
 
 }
 
+function auditoriumStageHint(){
+
+    alert(
+        "무대 바닥에 메모가 떨어져 있다.\n\n" +
+        "\"두 번째 숫자는\n" +
+        "음연과의 반 번호이다.\""
+    );
+
+}
+
 function classroomPasswordGame(){
 
     if(!hasItem("key")){
@@ -908,6 +918,11 @@ miniGame(
 miniGame(
     "outdoor-stage-stage-button",
     outdoorStageHint
+);
+
+miniGame(
+    "auditorium-stage-button",
+    auditoriumStageHint
 );
 
 miniGame(
