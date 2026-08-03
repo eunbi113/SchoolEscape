@@ -1,21 +1,16 @@
-/* ==========================================================
-   script.js
-   ----------------------------------------------------------
-   심야의 학교 - 화면 이동 기능
+/*
+심야의 학교 - 화면 전환 기능
 
-   배우는 내용
-   1. id로 HTML 요소 가져오기
-   2. 함수 만들기
-   3. display로 화면 숨기기 / 보이기
-   4. 버튼 클릭 이벤트 연결
-
-   ※ HTML과 CSS는 수정하지 않습니다.
-========================================================== */
+기능
+1. section 화면 숨기기 / 보이기
+2. 버튼 클릭으로 장소 이동
+3. 🏠 버튼으로 처음 화면 이동
+*/
 
 
-/* ==========================================================
-   1. 화면(section) 가져오기
-========================================================== */
+// ===============================
+// 화면 가져오기
+// ===============================
 
 const title = document.getElementById("title");
 
@@ -39,9 +34,9 @@ const classroom = document.getElementById("classroom");
 const ending = document.getElementById("ending");
 
 
-/* ==========================================================
-   2. 모든 화면 저장
-========================================================== */
+// ===============================
+// 모든 화면 저장
+// ===============================
 
 const screens = [
     title,
@@ -62,93 +57,79 @@ const screens = [
 ];
 
 
-/* ==========================================================
-   3. 화면 전환 함수
-
-   모든 화면을 숨긴 후
-   선택한 화면만 보여줍니다.
-========================================================== */
+// ===============================
+// 화면 전환 함수
+// ===============================
 
 function showScreen(screen){
 
     // 모든 화면 숨기기
     for(let i = 0; i < screens.length; i++){
-
         screens[i].style.display = "none";
-
     }
 
-
-    // 선택한 화면 보이기
+    // 선택한 화면 표시
     screen.style.display = "block";
-
 }
 
 
-/* ==========================================================
-   4. 게임 시작 시 타이틀만 표시
-========================================================== */
-
+// 처음에는 타이틀만 표시
 showScreen(title);
 
 
-/* ==========================================================
-   5. 버튼 가져오기
-========================================================== */
 
-/* ---------- 타이틀 ---------- */
+// ===============================
+// 버튼 가져오기
+// ===============================
 
-const startButton =
-document.getElementById("start-button");
+// 시작
+const startButton = document.getElementById("start-button");
 
-/* ---------- 교문 ---------- */
-
+// 이동 버튼
 const enterSchoolButton =
 document.getElementById("enter-school-button");
 
-/* ---------- 정문 ---------- */
+const moveStairsButton =
+document.getElementById("move-stairs-button");
 
-const goStairsButton =
-document.getElementById("go-stairs-button");
 
-/* ---------- 계단 ---------- */
-
-const basementButton =
+// 계단
+const goBasementButton =
 document.getElementById("go-basement-button");
 
-const firstFloorButton =
+const goFirstFloorButton =
 document.getElementById("go-first-floor-button");
 
-const secondFloorButton =
+const goSecondFloorButton =
 document.getElementById("go-second-floor-button");
 
-/* ---------- 지하 복도 ---------- */
 
-const smallAuditoriumButton =
+// 지하 복도
+const goSmallAuditoriumButton =
 document.getElementById("go-small-auditorium-button");
 
-const computerRoomButton =
+const goComputerRoomButton =
 document.getElementById("go-computer-room-button");
 
-const practiceRoomButton =
+const goPracticeRoomButton =
 document.getElementById("go-practice-room-button");
 
-const backStairsFromBasement =
+const backStairsFromBasementButton =
 document.getElementById("back-stairs-from-basement-button");
 
-/* ---------- 지하 장소 ---------- */
 
-const backBasementFromAuditorium =
+// 지하 장소 돌아가기
+const backBasementFromAuditoriumButton =
 document.getElementById("back-basement-from-auditorium-button");
 
-const backBasementFromComputer =
+const backBasementFromComputerButton =
 document.getElementById("back-basement-from-computer-button");
 
-const backBasementFromPractice =
+const backBasementFromPracticeButton =
 document.getElementById("back-basement-from-practice-button");
 
-/* ---------- 1층 ---------- */
 
+// 1층
 const goAuditoriumButton =
 document.getElementById("go-auditorium-button");
 
@@ -158,263 +139,174 @@ document.getElementById("go-restroom-button");
 const goOutdoorStageButton =
 document.getElementById("go-outdoor-stage-button");
 
-const backStairsFromFirstFloor =
+const backStairsFromFirstFloorButton =
 document.getElementById("back-stairs-from-first-floor-button");
 
-/* ---------- 1층 장소 ---------- */
 
-const backFirstFloorFromAuditorium =
+// 1층 장소 돌아가기
+const backFirstFloorFromAuditoriumButton =
 document.getElementById("back-first-floor-from-auditorium-button");
 
-const backFirstFloorFromRestroom =
+const backFirstFloorFromRestroomButton =
 document.getElementById("back-first-floor-from-restroom-button");
 
-const backFirstFloorFromStage =
+const backFirstFloorFromStageButton =
 document.getElementById("back-first-floor-from-stage-button");
 
-/* ---------- 2층 ---------- */
 
+// 2층
 const goClassroomButton =
 document.getElementById("go-classroom-button");
 
-const backStairsFromSecondFloor =
+const backStairsFromSecondFloorButton =
 document.getElementById("back-stairs-from-second-floor-button");
 
-/* ---------- 교실 ---------- */
 
+// 교실
 const lockerButton =
 document.getElementById("locker-button");
 
-const backSecondFloorFromClassroom =
+const backSecondFloorFromClassroomButton =
 document.getElementById("back-second-floor-from-classroom-button");
 
 
-/* ==========================================================
-   6. 화면 이동 이벤트
-========================================================== */
 
-/* 시작 */
+// ===============================
+// 이동 기능
+// ===============================
 
-startButton.addEventListener("click",function(){
 
+// 시작 → 교문
+startButton.addEventListener("click", function(){
     showScreen(schoolGate);
-
 });
 
-/* 교문 */
 
-enterSchoolButton.addEventListener("click",function(){
-
+// 교문 → 정문
+enterSchoolButton.addEventListener("click", function(){
     showScreen(mainEntrance);
-
 });
 
-/* 정문 */
 
-goStairsButton.addEventListener("click",function(){
-
+// 정문 → 계단
+moveStairsButton.addEventListener("click", function(){
     showScreen(stairs);
-
 });
 
 
-/* ==========================================================
-   계단
-========================================================== */
-
-
-basementButton.addEventListener("click",function(){
-
+// 계단 이동
+goBasementButton.addEventListener("click", function(){
     showScreen(basementHallway);
-
 });
 
-
-firstFloorButton.addEventListener("click",function(){
-
+goFirstFloorButton.addEventListener("click", function(){
     showScreen(firstFloorHallway);
-
 });
 
-
-secondFloorButton.addEventListener("click",function(){
-
+goSecondFloorButton.addEventListener("click", function(){
     showScreen(secondFloorHallway);
-
 });
 
 
-/* ==========================================================
-   지하 복도
-========================================================== */
-
-
-smallAuditoriumButton.addEventListener("click",function(){
-
+// 지하 복도 이동
+goSmallAuditoriumButton.addEventListener("click", function(){
     showScreen(smallAuditorium);
-
 });
 
-
-computerRoomButton.addEventListener("click",function(){
-
+goComputerRoomButton.addEventListener("click", function(){
     showScreen(computerRoom);
-
 });
 
-
-practiceRoomButton.addEventListener("click",function(){
-
+goPracticeRoomButton.addEventListener("click", function(){
     showScreen(practiceRoom);
-
 });
 
-
-backStairsFromBasement.addEventListener("click",function(){
-
+backStairsFromBasementButton.addEventListener("click", function(){
     showScreen(stairs);
-
 });
 
-/* 지하 장소 돌아가기 */
 
-backBasementFromAuditorium.addEventListener("click",function(){
-
+// 지하 장소 → 복도
+backBasementFromAuditoriumButton.addEventListener("click", function(){
     showScreen(basementHallway);
-
 });
 
-
-backBasementFromComputer.addEventListener("click",function(){
-
+backBasementFromComputerButton.addEventListener("click", function(){
     showScreen(basementHallway);
-
 });
 
-
-backBasementFromPractice.addEventListener("click",function(){
-
+backBasementFromPracticeButton.addEventListener("click", function(){
     showScreen(basementHallway);
-
 });
 
 
-/* ==========================================================
-   1층
-========================================================== */
-
-
-goAuditoriumButton.addEventListener("click",function(){
-
+// 1층 이동
+goAuditoriumButton.addEventListener("click", function(){
     showScreen(auditorium);
-
 });
 
-
-goRestroomButton.addEventListener("click",function(){
-
+goRestroomButton.addEventListener("click", function(){
     showScreen(restroom);
-
 });
 
-
-goOutdoorStageButton.addEventListener("click",function(){
-
+goOutdoorStageButton.addEventListener("click", function(){
     showScreen(outdoorStage);
-
 });
 
-
-backStairsFromFirstFloor.addEventListener("click",function(){
-
+backStairsFromFirstFloorButton.addEventListener("click", function(){
     showScreen(stairs);
-
 });
 
 
-/* 1층 장소 돌아가기 */
-
-
-backFirstFloorFromAuditorium.addEventListener("click",function(){
-
+// 1층 장소 → 복도
+backFirstFloorFromAuditoriumButton.addEventListener("click", function(){
     showScreen(firstFloorHallway);
-
 });
 
-
-backFirstFloorFromRestroom.addEventListener("click",function(){
-
+backFirstFloorFromRestroomButton.addEventListener("click", function(){
     showScreen(firstFloorHallway);
-
 });
 
-
-backFirstFloorFromStage.addEventListener("click",function(){
-
+backFirstFloorFromStageButton.addEventListener("click", function(){
     showScreen(firstFloorHallway);
-
 });
 
 
-/* ==========================================================
-   2층
-========================================================== */
-
-
-goClassroomButton.addEventListener("click",function(){
-
+// 2층 이동
+goClassroomButton.addEventListener("click", function(){
     showScreen(classroom);
-
 });
 
-
-backStairsFromSecondFloor.addEventListener("click",function(){
-
+backStairsFromSecondFloorButton.addEventListener("click", function(){
     showScreen(stairs);
-
 });
 
 
-/* ==========================================================
-   교실
-========================================================== */
-
-
-lockerButton.addEventListener("click",function(){
-
-    // 사물함 기능은 다음 단계에서 제작
-
-});
-
-
-
-backSecondFloorFromClassroom.addEventListener("click",function(){
-
+// 교실 → 복도
+backSecondFloorFromClassroomButton.addEventListener("click", function(){
     showScreen(secondFloorHallway);
+});
+
+
+// 사물함 버튼
+// 다음 단계에서 악보 획득 기능 추가
+lockerButton.addEventListener("click", function(){
 
 });
 
 
-/* ==========================================================
-   처음으로 버튼
 
-   모든 화면의 🏠 처음으로 버튼을 누르면
-   타이틀 화면으로 이동합니다.
-========================================================== */
+// ===============================
+// 🏠 버튼
+// ===============================
 
-
-const homeButtons =
-document.getElementsByClassName("home-button");
+const homeButtons = document.getElementsByClassName("home-button");
 
 
 for(let i = 0; i < homeButtons.length; i++){
 
-
-    homeButtons[i].addEventListener("click",function(){
-
+    homeButtons[i].addEventListener("click", function(){
         showScreen(title);
-
     });
-
 
 }
