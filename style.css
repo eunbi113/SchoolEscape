@@ -787,6 +787,18 @@ button,
 
 }
 
+#title{
+
+    background-image:url("images/메인.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
 /* ===================================================== */
 /* End */
 /* ===================================================== */
