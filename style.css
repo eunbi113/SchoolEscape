@@ -19,11 +19,17 @@
 ========================================================= */
 body{
 
-    /* 브라우저 기본 여백 제거 */
+    /* 화면 전체 너비 */
+    width:100%;
+
+    /* 화면 전체 높이 */
+    height:100%;
+
+    /* 바깥 여백 제거 */
     margin:0;
 
-    /* 안쪽 여백 */
-    padding:20px;
+    /* 안쪽 여백 제거 */
+    padding:0;
 
     /* 글꼴 */
     font-family:"Arial", sans-serif;
@@ -49,46 +55,37 @@ h1, h2, p {
 section{
 
     /* 화면 전체 너비 */
-    width:100%;
+    width:100vw;
 
     /* 화면 전체 높이 */
     height:100vh;
 
-    /* 여백 제거 */
+    /* 바깥 여백 제거 */
     margin:0;
 
     /* 안쪽 여백 */
-    padding:35px;
-
-    /* 카드 배경 */
-    background:#705e77;
-
-    /* 모서리 없음 */
-    border-radius:0;
-
-    /* 테두리 제거 */
-    border:none;
-
-    /* 그림자 제거 */
-    box-shadow:none;
-
-    /* 가운데 정렬 */
-    text-align:center;
-
-    /* Flex 사용 */
-    display:flex;
-
-    /* 세로 방향 */
-    flex-direction:column;
-
-    /* 세로 가운데 */
-    justify-content:center;
-
-    /* 가로 가운데 */
-    align-items:center;
+    padding:60px;
 
     /* padding을 포함해서 크기 계산 */
     box-sizing:border-box;
+
+    /* 배경색 */
+    background:#705e77;
+
+    /* 글자를 가운데 정렬 */
+    text-align:center;
+
+    /* Flexbox 사용 */
+    display:flex;
+
+    /* 세로 방향으로 배치 */
+    flex-direction:column;
+
+    /* 세로 가운데 정렬 */
+    justify-content:center;
+
+    /* 가로 가운데 정렬 */
+    align-items:center;
 }
 
 
