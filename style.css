@@ -68,6 +68,8 @@ section{
 
     /* 그림자 */
     box-shadow:0 10px 20px rgba(0,0,0,0.4);
+
+    text-align:center; 
 }
 
 
@@ -100,7 +102,8 @@ h2{
 
     margin-bottom:20px;
 }
-
+ text-align:center; 
+}
 
 /* =========================================================
    설명 글
@@ -112,6 +115,8 @@ p{
     line-height:1.8;
 
     margin-bottom:10px;
+   
+    text-align:center; 
 }
 
 
