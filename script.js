@@ -687,7 +687,7 @@ investigate(
 
 investigate(
     "auditorium-seat-button",
-    "객석은 텅 비어 있다."
+    "이곳에는 뭐가 있을까"
 
 );
 
@@ -708,7 +708,7 @@ investigate(
 
 investigate(
     "outdoor-stage-seat-button",
-    "이곳에는 뭐가 있을까"
+    "밤이라 그런지 매우 어둡다."
 );
 
 investigate(
