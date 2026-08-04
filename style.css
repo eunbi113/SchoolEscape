@@ -77,6 +77,14 @@ section{
 
     display:flex;
 
+    background-image:url("images/메인.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
 }
 
 
@@ -784,18 +792,6 @@ button,
     font-size:20px;
 
     cursor:pointer;
-
-}
-
-#title{
-
-    background-image:url("images/메인.png");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
 
 }
 
